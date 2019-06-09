@@ -1,5 +1,5 @@
 # Mon premier programme
-GitLab est un gestionnaire de sources codes sur Internet. Il permet de stocker tous mes codes sources et d'y avoiraccès depuis n'importe où. Il permet aussi de le partager. 
+GitLab est un gestionnaire de sources codes sur Internet. Il permet de stocker tous mes codes sources et d'y avoir accès depuis n'importe où. Il permet aussi de le partager. 
 
 Je vais stocker tous mes codes sources Python dans le répertoire Python sur GitLab, puis je créérai un répertoire par projet. 
 
@@ -7,13 +7,13 @@ L'objet de ce chapitre est de montrer :
 - Comment créer un projet sur GitLab pour son projet
 - Comment cloner ce projet sur son poste de travail avec 'git clone'
 - Comment créer une branche locale Git qu va contenir mon code source
-- Comment ajouter une répertoire qui va contenir le code source de mon proemier programme en local (sur mon poste de travail)
+- Comment ajouter un répertoire qui va contenir le code source de mon premier programme en local (sur mon poste de travail)
 - Comment créer un fichier Python qui va contenir le code source de mon programme en local 
 - Comment tester mon programme en local 
-- Comment pousser ma branche dans lmon repository sur GitLab
+- Comment pousser ma branche dans mon repository sur GitLab
 - Comment merger ma branche sur GitLab avec la branche Master
 
-## Créer mon répertoire sur GitLab pour mon projet
+## Créer mon projet sur GitLab
 1. Se connecter sur <https://gitlab.com> 
 2. Créer un projet Python en cliquant sur 'New Project'
 3. Lui donner le nom 'Pyhton' et le laisser 'Private'
@@ -21,9 +21,9 @@ L'objet de ce chapitre est de montrer :
 Ca y est, on a créer notre projet. Mais il n'existe que sur GitLab, or je veux développer sur mon poste de travail. Je vais donc le 'cloner' sur mon poste de travail
 
 ## Cloner le projet sur mon poste de travail
-1. Sur GitLab, cliquer sur `Clone` (en haut à droite) et copier le texte pour cloner en SSH : git@gitlab.com:maxime285/python.git
+1. Sur GitLab, cliquer sur `Clone` (en haut à droite) et copier le texte pour cloner en SSH : "git@gitlab.com:maxime285/python.git"
 1. Ouvrir une boite de commander sous Windows ou un Terminal sous MacOS/Linux
-2. Se positionner dans le répertoire où on veut cloner le répertoire de travail 
+2. Se positionner dans le répertoire où on veut cloner le projet
 3. Exécuter la commande suivante :
 ```shell
 git clone git@gitlab.com:maxime285/python.git
@@ -77,10 +77,11 @@ Ca se passe en 2 étapes :
 ### Stage + Commit
 Définitions :
 - Stage = acter des changements effectués dans notre programme. Un changement peut être un ajout/suppression de code, ou même l'ajout/retrait de fichier ou de dossiers dans notre projet
-- Commit = confirmer des changements et les rendre prêts à être pousser sur gitlab.com. Quand on Commit, on doit fournir un message d'explication : ex: ajout du programme hello.py 
+- Commit = confirmer des changements et les rendre prêts à être poussés sur gitlab.com. Quand on Commit, on doit fournir un message d'explication : ex: ajout du programme hello.py 
 
 1. Cliquer sur l'icône `Source Control` (en forme de Y). Normalement, il y a un nombre qui informe sur le nombre de changements à stager et à commmitter.
-2. On voit tous les fichiers qui ont subi des modifications. Cliquer sur '+'  et donner un message d'explication' dans le champs 'Message 
+2. On voit tous les fichiers qui ont subi des modifications. Cliquer sur '+'  
+3. Puis donner un message d'explication' dans le champs 'Message et cliquer la 'coche de validation' pour Committer
 
 ### Pousser la branche sur gitlab.com
 
@@ -90,7 +91,7 @@ Définitions :
 Un message nous informe que la branche n'existe pas sur GitLab. Cliquer sur OK. Que s'est-il passé :
 - VSC a exécuté la commande 'git push' pour nous
 - Le programme git que l'on a installé sur notre poste a contacté notre repository sur le site internet 'GitLab'
-- Le programme git a poussé notre branche 'mon-debut-de-code' dnas niotre repository
+- Le programme git a poussé notre branche 'mon-debut-de-code' dans notre repository
 
 Maintenant, il faut aller sur GitLab et merger la branche avec la branche principale "Master".
 
@@ -114,7 +115,7 @@ L'action Merge consiste à incorporer les changements que l'on a dans notre bran
 C'est fait. GitLab a intégré les changements dans la branche principale. 
 
 On peut le vérifier ainsi :
-- Constater qu'il n'y a plus que la branche Master dans GitLab en cliquant sur la petite flêche juste à c$oté de Master
+- Constater qu'il n'y a plus que la branche Master dans GitLab en cliquant sur la petite flêche juste à côté de Master
 - Voir que les changements ont bien été pris en compte : il y a un répertoire Hello et le fichier hello.py dedans. Master est en version 1 (V1)
 
 Il s'agit maintenant de faire en sorte que le poste de travail soit au même niveau que gitlab.com. Pour le moment, ils ne sont pas dans le même état comme le présente le tableau ci-dessous :

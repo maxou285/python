@@ -26,7 +26,7 @@ On a déjà vu comment il faut faire, mais je le rappelle ici :
 
 ## Effectuer les nouveaux développements
 On va ajouter un 'Bonjour Valentin" au programme :
-1. Dans VSC, cliquer sur l'icône `Explorer` (fichier l'un sur l'autre)
+1. Dans VSC, cliquer sur l'icône `Explorer` (fichiers l'un sur l'autre)
 2. Ouvrir hello.py et ajouter l'instruction Print. Le résultat est comme suit normalement : 
 ```shell
 #! /usr/bin/python3
@@ -43,7 +43,8 @@ On doit voir les 2 messages s'afficher comme il faut.
 ## Valider les changements (Stage + Commit) 
 Fastoche :
 1. Cliquer sur l'icône `Source Control` (en forme de Y). Normalement, il y a un nombre qui informe sur le nombre de changements à stager et à commmitter.
-2. On voit tous les fichiers qui ont subi des modifications. Cliquer sur '+'  et donner un message d'explication' dans le champs 'Message 
+2. On voit tous les fichiers qui ont subi des modifications. Cliquer sur '+'  
+3. Puis donner un message d'explication' dans le champs 'Message et cliquer la 'coche de validation' pour Committer
 
 ## Pousser la branche de développement sur GitLab
 1. Cliquer sur `GitLens` à gauche (icône ronde avec un embranchement dedans)
@@ -66,6 +67,6 @@ Fastoche :
 4. Click droit sur la branche `ajout-print-valentin` puis `Delete branch (via Terminal)` et appuyer sur `Enter` dans la fenêtre Terminal
 
 ## BRAVO
-On vient de modifier notre programme et de mettre GitLab et le poste de travail au niveau de version. 
+On vient de modifier notre programme et de mettre GitLab et le poste de travail au même niveau de version. 
 
 
