@@ -1,3 +1,4 @@
 # Table des matières
 
-- [Installation de l'environnement de développement](https://gitlab.com/help/ssh/README#gitlab-and-ssh-keys)
+- [Installation de l'environnement de développement](https://gitlab.com/maxime285/python/blob/master/Guides/EnvDev.md)
+- [Mon premier programme](https://gitlab.com/maxime285/python/blob/master/Guides/PremierProgramme.md)
