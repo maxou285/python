@@ -126,7 +126,7 @@ Branches | Master et mon-debut-de-code | Master | Supprimer la branche mon-debut
 
 ### Passer la branche Master en local de V0 à V1 en tirant (pull) depuis GitLab
 1. Aller dans VSC 
-2. Cliquer sur l'icône Passer la branche Master en local de V0 à V1 en tirant (pull) depuis `GitLens`(icône ronde avec embranchement)
+2. Cliquer sur l'icône `GitLens`(icône ronde avec embranchement)
 3. Activer la branche Master en faisant : click droit sur `Master` puis `Checkout`. On est en V0 en local, donc il n'y a ni le répertoire 'Hello' ni le fichier 'hello.py'. Se rassurer, ils ne sont pas perdus. C'est juste qu'ils ne sont pas dans la branche locale Master. Si on activait la branche 'mon-debut-de-code' on les retrouverait. Mais on veut passer la branche Master de V0 à V1 donc on reste sur celle-ci
 4. Clicker sur l'icône de `flêche vers le bas` qui correspond à `Pull Repositories`
 
