@@ -36,13 +36,13 @@ Ca y est, vous avez `cloné` le contenu qui était sur Internet sur votre poste 
 2. Click droit sur la branche `Master` puis `Create branch (via Terminal)`
 3. Donner un nom à la branche : `mon-debut-de-code`
 4. La ligne de commande est générée, il faut appuyer sur la touche `Enter` pour valider
-5. La branche nouvellement créée est apparue, il faut l'activer. Pour cela, click droit sur `mo,n-debut-de-code` puis clicker sur`Checkout`
+5. La branche nouvellement créée est apparue, il faut l'activer. Pour cela, click droit sur `mon-debut-de-code` puis clicker sur`Checkout`
 
 Tous les changements auront maintenant lieu dans cette branche sans altérer la branche principale (Master).
 
 Nous allons maintenant, créer le répertoire pour notre premier programme, le tester et le stocker dans notre repository GitLab sur Internet. 
 
-## Créer mon projet
+## Créer mon programme
 Mon premier programme Python est très simple. Il s'agit juste d'afficher un message 'Salut Maxime" à l'écran. 
 
 1. Dans VSC, ouvrir le projet : `File -> Open` et naviguer jusqu'au répertoire `Python`
@@ -65,7 +65,7 @@ La première ligne informe qu'il faut utiliser la version 3 de Python. La deuxi�
 
 ## Tester si le programme fonctionne bien
 1. Click droit sur le hello.py 
-2. Cliquer sur `Run Python File in Terminal'
+2. Cliquer sur `Run Python File in Terminal`
 
 Observer que ça affiche bien le message 'Salut Maxime'
 
@@ -85,7 +85,7 @@ Définitions :
 ### Pousser la branche sur gitlab.com
 
 1. Cliquer sur `GitLens` à gauche (icône ronde avec un embranchement dedans)
-2. Clicker sur la fl^che qui va vers le haut qui correspond à `Push Repositories'
+2. Clicker sur la flêche qui va vers le haut qui correspond à `Push Repositories'
 
 Un message nous informe que la branche n'existe pas sur GitLab. Cliquer sur OK. Que s'est-il passé :
 - VSC a exécuté la commande 'git push' pour nous
@@ -126,7 +126,7 @@ Branches | Master et mon-debut-de-code | Master | Supprimer la branche mon-debut
 
 ### Passer la branche Master en local de V0 à V1 en tirant (pull) depuis GitLab
 1. Aller dans VSC 
-2. Cliquer sur l'icône Passer la branche Master en local de V0 à V1 en tirant (pull) depuis `GitLens`(icône ronde avec embranchement)
+2. Cliquer sur l'icône `GitLens`(icône ronde avec embranchement)
 3. Activer la branche Master en faisant : click droit sur `Master` puis `Checkout`. On est en V0 en local, donc il n'y a ni le répertoire 'Hello' ni le fichier 'hello.py'. Se rassurer, ils ne sont pas perdus. C'est juste qu'ils ne sont pas dans la branche locale Master. Si on activait la branche 'mon-debut-de-code' on les retrouverait. Mais on veut passer la branche Master de V0 à V1 donc on reste sur celle-ci
 4. Clicker sur l'icône de `flêche vers le bas` qui correspond à `Pull Repositories`
 
@@ -135,7 +135,7 @@ Git en local (sur le poste de travail), applique tous les changements de branche
 ### Supprimer la branche mon-debut-de-code
 On a plus besoin de la branche mon-debut-de-code alors on va la supprimer :
 
-1. Click droit sur `mon-debut-de-code'
+1. Dans VSC, click droit sur `mon-debut-de-code'
 2. Cliquer sur `Delete branch (via Terminal)`
 3. Appuyer sur `Enter` dans la fenêtre Terminal. Ca supprime la branche
 
