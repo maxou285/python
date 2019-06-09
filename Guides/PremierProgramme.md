@@ -106,9 +106,10 @@ L'action Merge consiste à incorporer les changements que l'on a dans notre bran
 5. Cliquer sur `Merge`
 6. Mettre un message qui décrit les changements
 7. Cliquer sur `Assign to` et se sélectionner soi-même si personne d'autre n'a à valider les changements
-8. Sélectionner 'Delete source branch'
-9. Valider
-10. On demande encore de cliquer sur `Merge` pour confirmer le Merge
+8. Observer que 'Source branch' est 'mon-debut-de-code' et que 'Target branch' est 'Master'
+9. Sélectionner 'Delete source branch'
+10. Valider
+11. On demande encore de cliquer sur `Merge` pour confirmer le Merge
 
 C'est fait. GitLab a intégré les changements dans la branche principale. 
 
