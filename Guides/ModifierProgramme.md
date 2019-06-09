@@ -9,7 +9,7 @@ Quand on veut modifier son programme on doit effectuer les actions suivantes :
 7. Merger la branche de développement avec la branche Master et supprimer la branche de développement sur GitLab
 8. Synchroniser la branche Master locale avec la branche Master GitLab et supprimer la branche de développement en local
 
-## S'assurer que la branche `Master en local` est égale à la branche `Master sur GitLab`
+## S'assurer que la branche Master en local est égale à la branche Master sur GitLab
 Si ce n'est pas le cas, il faut :
 - Dans VSC, cliquer sur l'icône `GitLens` (cercle avec embranchement)
 - Activer la branche `Master` (Checkout)
