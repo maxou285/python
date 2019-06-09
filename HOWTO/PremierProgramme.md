@@ -13,14 +13,14 @@ L'objet de ce chapitre est de montrer :
 - Comment pousser ma branche dans mon repository sur GitLab
 - Comment merger ma branche sur GitLab avec la branche Master
 
-## Créer mon projet sur GitLab
+## 1. Créer mon projet sur GitLab
 1. Se connecter sur <https://gitlab.com> 
 2. Créer un projet Python en cliquant sur 'New Project'
 3. Lui donner le nom 'Pyhton' et le laisser 'Private'
 
 Ca y est, on a créer notre projet. Mais il n'existe que sur GitLab, or je veux développer sur mon poste de travail. Je vais donc le 'cloner' sur mon poste de travail
 
-## Cloner le projet sur mon poste de travail
+## 2. Cloner le projet sur mon poste de travail
 1. Sur GitLab, cliquer sur `Clone` (en haut à droite) et copier le texte pour cloner en SSH : "git@gitlab.com:maxime285/python.git"
 1. Ouvrir une boite de commander sous Windows ou un Terminal sous MacOS/Linux
 2. Se positionner dans le répertoire où on veut cloner le projet
@@ -31,7 +31,7 @@ git clone git@gitlab.com:maxime285/python.git
 
 Ca y est, vous avez `cloné` le contenu qui était sur Internet sur votre poste de travail. Pour le moment, il n`y a rien dedans. Nous allons maintenant créer une branche de travail. En effet, il ne faut pas toucher à la branche "Master" directement. Celle-ci doit uniquement contenir des codes qui fonctionnent parfaitement. 
 
-## Créer une branche de travail
+## 3. Créer une branche de travail
 1. Dans VSC, cliquer sur l'icône `GitLens` (un rond dans lequel on voit une espèce d'embranchement)
 2. Click droit sur la branche `Master` puis `Create branch (via Terminal)`
 3. Donner un nom à la branche : `mon-debut-de-code`
@@ -42,7 +42,7 @@ Tous les changements auront maintenant lieu dans cette branche sans altérer la 
 
 Nous allons maintenant, créer le répertoire pour notre premier programme, le tester et le stocker dans notre repository GitLab sur Internet. 
 
-## Créer mon programme
+## 4. Créer mon programme
 Mon premier programme Python est très simple. Il s'agit juste d'afficher un message 'Salut Maxime" à l'écran. 
 
 1. Dans VSC, ouvrir le projet : `File -> Open` et naviguer jusqu'au répertoire `Python`
@@ -63,18 +63,18 @@ La première ligne informe qu'il faut utiliser la version 3 de Python. La deuxi�
 
 5. Sauvegarder le programme avec `CTRL+S`
 
-## Tester si le programme fonctionne bien
+## 5. Tester si le programme fonctionne bien
 1. Click droit sur le hello.py 
 2. Cliquer sur `Run Python File in Terminal`
 
 Observer que ça affiche bien le message 'Salut Maxime'
 
-## Pousser la branche sur GitLab
+## 6. Pousser la branche sur GitLab
 Ca se passe en 2 étapes :
 1. Stage + Commit de nos changements
 2. Poussage de la branche avec nos commits sur le site internet gitlab.com
 
-### Stage + Commit
+### 6.1 Stage + Commit
 Définitions :
 - Stage = acter des changements effectués dans notre programme. Un changement peut être un ajout/suppression de code, ou même l'ajout/retrait de fichier ou de dossiers dans notre projet
 - Commit = confirmer des changements et les rendre prêts à être poussés sur gitlab.com. Quand on Commit, on doit fournir un message d'explication : ex: ajout du programme hello.py 
@@ -83,7 +83,7 @@ Définitions :
 2. On voit tous les fichiers qui ont subi des modifications. Cliquer sur '+'  
 3. Puis donner un message d'explication' dans le champs 'Message et cliquer la 'coche de validation' pour Committer
 
-### Pousser la branche sur gitlab.com
+### 6.2 Pousser la branche sur gitlab.com
 
 1. Cliquer sur `GitLens` à gauche (icône ronde avec un embranchement dedans)
 2. Clicker sur la flêche qui va vers le haut qui correspond à `Push Repositories'
@@ -95,7 +95,7 @@ Un message nous informe que la branche n'existe pas sur GitLab. Cliquer sur OK. 
 
 Maintenant, il faut aller sur GitLab et merger la branche avec la branche principale "Master".
 
-## Merger la branche de travail avec la branche principale
+## 7. Merger la branche de travail avec la branche principale
 La branche principale "Master" est la branche qui contient du code qui fonctionne. L'idée est de ne la modifier que lorsqu'on est sûr que le code sur lequel on a travaillé fonctionne correctement. 
 
 L'action Merge consiste à incorporer les changements que l'on a dans notre branche de travail (mon-debut-de-code) dans la branche principale (Master). Ca se passe sur le site GitLab.
@@ -125,7 +125,7 @@ Il s'agit maintenant de faire en sorte que le poste de travail soit au même niv
 Niveau de la branche Master | V0 | V1 | Passer la branche Master en local de V0 à V1 en tirant (pull) depuis GitLab
 Branches | Master et mon-debut-de-code | Master | Supprimer la branche mon-debut-de-code
 
-### Passer la branche Master en local de V0 à V1 en tirant (pull) depuis GitLab
+## 8. Passer la branche Master en local de V0 à V1 en tirant (pull) depuis GitLab
 1. Aller dans VSC 
 2. Cliquer sur l'icône `GitLens`(icône ronde avec embranchement)
 3. Activer la branche Master en faisant : click droit sur `Master` puis `Checkout`. On est en V0 en local, donc il n'y a ni le répertoire 'Hello' ni le fichier 'hello.py'. Se rassurer, ils ne sont pas perdus. C'est juste qu'ils ne sont pas dans la branche locale Master. Si on activait la branche 'mon-debut-de-code' on les retrouverait. Mais on veut passer la branche Master de V0 à V1 donc on reste sur celle-ci
@@ -133,7 +133,7 @@ Branches | Master et mon-debut-de-code | Master | Supprimer la branche mon-debut
 
 Git en local (sur le poste de travail), applique tous les changements de branche Master de GitLab sur la branche Master en local. Il est possible de vérifier que les changements sont bien apparus en voyant que maintenant il y a bien le répertoire 'Hello' et 'hello.py'. 
 
-### Supprimer la branche mon-debut-de-code
+## 9. Supprimer la branche mon-debut-de-code
 On a plus besoin de la branche mon-debut-de-code alors on va la supprimer :
 
 1. Dans VSC, click droit sur `mon-debut-de-code'
@@ -149,7 +149,7 @@ Branches | Master | Master
 
 On est bien au même niveau. 
 
-## BRAVO
+# BRAVO
 Dans ce chapitre, on a : 
 - Créé un nouveau projet vide 'Hello' sur GitLab
 - Cloné ce projet vide sur notre poste de travail
