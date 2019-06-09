@@ -65,7 +65,7 @@ La première ligne informe qu'il faut utiliser la version 3 de Python. La deuxi�
 
 ## Tester si le programme fonctionne bien
 1. Click droit sur le hello.py 
-2. Cliquer sur `Run Python File in Terminal'
+2. Cliquer sur `Run Python File in Terminal`
 
 Observer que ça affiche bien le message 'Salut Maxime'
 
