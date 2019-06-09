@@ -85,7 +85,7 @@ Définitions :
 ### Pousser la branche sur gitlab.com
 
 1. Cliquer sur `GitLens` à gauche (icône ronde avec un embranchement dedans)
-2. Clicker sur la fl^che qui va vers le haut qui correspond à `Push Repositories'
+2. Clicker sur la flêche qui va vers le haut qui correspond à `Push Repositories'
 
 Un message nous informe que la branche n'existe pas sur GitLab. Cliquer sur OK. Que s'est-il passé :
 - VSC a exécuté la commande 'git push' pour nous
