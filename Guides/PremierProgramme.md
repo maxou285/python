@@ -116,7 +116,8 @@ On peut le vérifier ainsi :
 - Constater qu'il n'y a plus que la branche Master dans GitLab en cliquant sur la petite flêche juste à c$oté de Master
 - Voir que les changements ont bien été pris en compte : il y a un répertoire Hello et le fichier hello.py dedans. Master est en version 1 (V1)
 
-Il s'agit maintenant de faire en sorte que le poste de travail soit au même niveau que gitlab.com. Pour le moment, ils ne sont pas dans le même état comme le présente le tableau ci-dessous
+Il s'agit maintenant de faire en sorte que le poste de travail soit au même niveau que gitlab.com. Pour le moment, ils ne sont pas dans le même état comme le présente le tableau ci-dessous :
+
 &nbsp; | Poste de travail | GitLab | Action requise
 --- |--- | ---  | --- 
 Niveau de la branche Master | V0 | V1 | Passer la branche Master en local de V0 à V1 en tirant (pull) depuis GitLab
@@ -138,7 +139,8 @@ On a plus besoin de la branche mon-debut-de-code alors on va la supprimer :
 3. Appuyer sur `Enter` dans la fenêtre Terminal. Ca supprime la branche
 
 Résultat des courses on se retrouve comme suit : 
-Domaine | Poste de travail | GitLab 
+
+&nbsp; | Poste de travail | GitLab 
 --- |--- | --- 
 Niveau de la branche Master | V1 | V1 
 Branches | Master | Master 
