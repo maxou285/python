@@ -3,6 +3,8 @@ GitLab est un gestionnaire de sources codes sur Internet. Il permet de stocker t
 
 Je vais stocker tous mes codes sources Python dans le répertoire Python sur GitLab, puis je créérai un répertoire par projet. 
 
+#### IMPORTANT : les détails des opérations à effectuer sont décrits dans les paragraphes numérotés. 
+
 L'objet de ce chapitre est de montrer :
 - Comment créer un projet sur GitLab pour son projet
 - Comment cloner ce projet sur son poste de travail avec 'git clone'

@@ -1,6 +1,6 @@
 # Modifier mon programme
 
-IMPORTANT : les détails des opérations à effectuer sont décrits dans les paragraphes numérotés. 
+#### IMPORTANT : les détails des opérations à effectuer sont décrits dans les paragraphes numérotés. 
 
 Quand on veut modifier son programme on doit effectuer les actions suivantes :
 - S'assurer que la branche `Master en local` est égale à la branche `Master sur GitLab`
