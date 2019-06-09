@@ -42,7 +42,7 @@ Tous les changements auront maintenant lieu dans cette branche sans altérer la 
 
 Nous allons maintenant, créer le répertoire pour notre premier programme, le tester et le stocker dans notre repository GitLab sur Internet. 
 
-## Créer mon projet
+## Créer mon programme
 Mon premier programme Python est très simple. Il s'agit juste d'afficher un message 'Salut Maxime" à l'écran. 
 
 1. Dans VSC, ouvrir le projet : `File -> Open` et naviguer jusqu'au répertoire `Python`
