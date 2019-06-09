@@ -143,5 +143,15 @@ Résultat des courses on se retrouve comme suit :
 Niveau de la branche Master | V1 | V1 
 Branches | Master | Master 
 
-On est bien au même niveau.
+On est bien au même niveau. 
 
+## BRAVO
+Dans ce chapitre, on a : 
+- Créé un nouveau projet vide 'Hello' sur GitLab
+- Cloné ce projet vide sur notre poste de travail
+- Créé une branche de développement de notre prohgramme
+- Créé un répertoire pour notre programme et on développer un programme Python très simple
+- Testé que notre programme fonctionne bien
+- Poussé notre branche de développement sur GitLab
+- Mergé notre branche de développement avec la branche Master et supprimé la branche de développement sur GitLab 
+- Fait en sorte que le poste de travail soit au même niveau que GitLab
