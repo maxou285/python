@@ -135,7 +135,7 @@ Git en local (sur le poste de travail), applique tous les changements de branche
 ### Supprimer la branche mon-debut-de-code
 On a plus besoin de la branche mon-debut-de-code alors on va la supprimer :
 
-1. Click droit sur `mon-debut-de-code'
+1. Dans VSC, click droit sur `mon-debut-de-code'
 2. Cliquer sur `Delete branch (via Terminal)`
 3. Appuyer sur `Enter` dans la fenêtre Terminal. Ca supprime la branche
 
