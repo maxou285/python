@@ -36,7 +36,7 @@ Ca y est, vous avez `cloné` le contenu qui était sur Internet sur votre poste 
 2. Click droit sur la branche `Master` puis `Create branch (via Terminal)`
 3. Donner un nom à la branche : `mon-debut-de-code`
 4. La ligne de commande est générée, il faut appuyer sur la touche `Enter` pour valider
-5. La branche nouvellement créée est apparue, il faut l'activer. Pour cela, click droit sur `mo,n-debut-de-code` puis clicker sur`Checkout`
+5. La branche nouvellement créée est apparue, il faut l'activer. Pour cela, click droit sur `mon-debut-de-code` puis clicker sur`Checkout`
 
 Tous les changements auront maintenant lieu dans cette branche sans altérer la branche principale (Master).
 
