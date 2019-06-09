@@ -138,7 +138,7 @@ On a plus besoin de la branche mon-debut-de-code alors on va la supprimer :
 3. Appuyer sur `Enter` dans la fenêtre Terminal. Ca supprime la branche
 
 Résultat des courses on se retrouve comme suit : 
-&nbsp; | Poste de travail | GitLab 
+Domaine | Poste de travail | GitLab 
 --- |--- | --- 
 Niveau de la branche Master | V1 | V1 
 Branches | Master | Master 
