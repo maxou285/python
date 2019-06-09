@@ -20,3 +20,4 @@ Il est conseillé d'installer les extensions suivantes :
 - GitLens
 - markdownlint
 - Git History
+- Python
