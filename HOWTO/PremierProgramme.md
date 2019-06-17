@@ -133,6 +133,8 @@ Branches | Master et mon-debut-de-code | Master | Supprimer la branche mon-debut
 3. Activer la branche Master en faisant : click droit sur `Master` puis `Checkout`. On est en V0 en local, donc il n'y a ni le répertoire 'Hello' ni le fichier 'hello.py'. Se rassurer, ils ne sont pas perdus. C'est juste qu'ils ne sont pas dans la branche locale Master. Si on activait la branche 'mon-debut-de-code' on les retrouverait. Mais on veut passer la branche Master de V0 à V1 donc on reste sur celle-ci
 4. Clicker sur l'icône de `flêche vers le bas` qui correspond à `Pull Repositories`
 
+Note : pour l'étape 4, il est aussi possible de synchroniser en saisissant la commande `git pull --prune`. L'option 'prune' permet de nettoyer la base locale git.
+
 Git en local (sur le poste de travail), applique tous les changements de branche Master de GitLab sur la branche Master en local. Il est possible de vérifier que les changements sont bien apparus en voyant que maintenant il y a bien le répertoire 'Hello' et 'hello.py'. 
 
 ## 9. Supprimer la branche mon-debut-de-code
