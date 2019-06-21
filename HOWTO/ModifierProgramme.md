@@ -31,7 +31,7 @@ On a déjà vu comment il faut faire, mais je le rappelle ici :
 On va ajouter un 'Bonjour Valentin" au programme :
 1. Dans VSC, cliquer sur l'icône `Explorer` (fichiers l'un sur l'autre)
 2. Ouvrir hello.py et ajouter l'instruction Print. Le résultat est comme suit normalement : 
-```shell
+```python
 #! /usr/bin/python3
 
 print("Salut Maxime")

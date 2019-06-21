@@ -26,7 +26,7 @@ Nota : quelle est la différence entre 'type' et 'class' ? A ce stade, on ne va 
 La création d'une variable est très simple en Python. Quand on en a besoin, on déclare un nom et on lui affecte une valeur. 
 
 Exemple : 
-```shell
+```python
 prenom="Salut Maxime"       # création d'une variable dont le nom est 'prenom' et la valeur est "Salut Maxime". Astuce pas d'accent dans les noms de variables
 
 nombre_entier=34            # création d'une variable dont le nom est 'nombre_entier' et sa valeur est 34
@@ -38,12 +38,12 @@ Note : On peut mettre des commentaires dans son code si on précède du symbole 
 La programmation est un art dans lequel on passe notre temps à créér/coder une idée, mais on passe un temps fou à débugger c'est-à-dire à enlever les bugs de fonctionnement de notre programme. 
 
 Comme on ne déclare pas le type des variables en Python, on peut parfois croire faire une opération qui en fait donne comme un résultat mauvais tout ça parce qu'on se trompe de type de variable. Aussi, il existe une méthode pour connaître le type d'une variable :
-```shell
+```python
 type(nom_de_variable)
 ```
 
 Exemple : 
-```shell
+```python
 #! /usr/bin/python3
 
 A="Salut Maxime"
@@ -52,14 +52,14 @@ print(type(A))
 ```
 
 Le résultat est: 
-```shell
+```
 Salut Maxime
 (class,str)
 ```
 Comme vous le voyez, le type (=classe) est `str` ce qui correspond au type 'string' (chaine de caractères).
 
 Alors que se passe t'il si on affecte une valeur numérique à la variable A. Et bien, c'est simple, Python va changer le type de la variable. Illustration :
-```shell
+```python
 #! /usr/bin/python3
 
 A="Salut Maxime"
@@ -72,7 +72,7 @@ print(type(A))
 ```
 
 Le résultat est: 
-```shell
+```
 Salut Maxime
 (class,str)
 2
@@ -86,7 +86,7 @@ En fait, quand Python créé une variable, en réalité il créé une instance q
 Il peut être utile de connaître le type de la variable. Pour cela, on utilise l'instruction `isinstance(nom_variable,type)`.
 
 Exemple : 
-```shell
+```python
 msg = 'Hello'
 
 print(isinstance(msg,int))          # msg est-il un nombre entier ?
@@ -94,7 +94,7 @@ print(isinstance(msg,str))          # msg est-il de type chaine de caractères ?
 ```
 
 Résultat :
-```shell
+```
 False
 True
 ```
@@ -104,7 +104,7 @@ True
 Parfois, on voudra convertir une variable d'un type dans un autre. Par exemple, on a une variable de type 'str' A qui est une chaine de caractère ayant la valeur "23". On peut la convertir on un nombre entier 23 (sans les guillemets pour faire des opérations numériques dessus). Dans ce cas, on va faire une opération dite de 'casting' très simple. 
 
 Exemple : 
-```shell
+```python
 A="23"
 print(A)
 print(type(A))
@@ -117,7 +117,7 @@ print(A)
 ```
 
 Donne comme résultat :
-```shell
+```
 23
 (class, str)
 ----------------
@@ -145,7 +145,7 @@ Du coup, cette instruction n'est pas pratique car il faut tester son type.
 C'est pour ça qu'il est préférable d'utiliser l'instruction 'raw_input'. Elle fait le même boulot mais stocke le résultat dans une variable de type `str` dans tous les cas. Ensuite, il est possible de convertir le résultat dans le type que l'on souhaite avec le mécanisme de 'cast' vu plus haut.
 
 Sa syntaxe est la suivante :
-```shell
+```python
 nom_variable=raw_input('message :')
 ```
 
