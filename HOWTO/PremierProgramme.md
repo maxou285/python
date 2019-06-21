@@ -56,7 +56,7 @@ A ce stade, le répertoire Python apparait dans la partie Gauche de VSC. Je vais
 4. Click droit sur `Hello` puis `New File` et donner le nom `hello.py`
 
 Maintenant, je double clique sur hello.py pour entrer le code suivant sui va afficher le message :
-```shell
+```python
 #! /usr/bin/python3
 
 print("Salut Maxime")
