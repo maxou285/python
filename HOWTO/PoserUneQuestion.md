@@ -138,11 +138,8 @@ Nommer votre répertoire : `PoseQuestion`
 
 Puis créer votre fichier : `posequestion.py`
 
-### 2.2 Instructions 'input' et 'raw_input'
-L'instruction 'input' est l'instruction qui permet de poser une question à l'utilisateur et de stocker la réponse dans une variable. Le type de la variable dépend de la réponse de l'utilisateur. S'il saisit un nombre alors ça sera de type 'int'. Si c'est une réponse entre guillemets alors ça sera de type 'str'.
-Du coup, cette instruction n'est pas pratique car il faut tester son type. 
-
-C'est pour ça qu'il est préférable d'utiliser l'instruction 'raw_input'. Elle fait le même boulot mais stocke le résultat dans une variable de type `str` dans tous les cas. Ensuite, il est possible de convertir le résultat dans le type que l'on souhaite avec le mécanisme de 'cast' vu plus haut.
+### 2.2 Instructions 'input'
+L'instruction 'input' est l'instruction qui permet de poser une question à l'utilisateur et de stocker la réponse dans une variable.Le type de la réponse est toujours `str` en Python 3. Ensuite, il est possible de convertir le résultat dans le type que l'on souhaite avec le mécanisme de 'cast' vu plus haut.
 
 Sa syntaxe est la suivante :
 ```python
