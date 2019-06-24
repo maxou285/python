@@ -7,7 +7,7 @@ Pour cela on utilise des opérateurs de comparaison. Ils servent à déterminer 
 ## Le type de variable booleen
 En anglais *boolean*, il s'agit juste d'une variable qui ne peut prendre que 2 valeurs : VRAI ou FAUX.
 
-## L'instruction en Pyhton
+## L'instruction en Python
 On utilise les instruction `if`, `elif` et `else` sui ont la signification suivante :
 
 Instruction | Signification
@@ -19,11 +19,11 @@ else | sinon
 Elle s'utilise comme suit : 
 ```python
 if <condition 1> :
-    <instructions si condition 1 est vrai>
+    <instructions>                                                  # exécuté si condition 1 est vraie
 elif <condition 2> :
-    <instructions si condition 2 est vrai>
+    <instructions>                                                  # exécuté si condition 2 est vraie
 else
-    <instructions si condition 1 ET condition 2 sont fausses>
+    <instructions>                                                  # exécuté dans tous les autres cas
 ```
 
 A noter que l'on peut avoir autant de `elif` que l'on souhaite. Par exemple : 
@@ -56,12 +56,12 @@ Voici la liste des opérateurs utilisables :
 
 Opérateur | Signification
 --- | ---
-== | égal
-!= | non égal
-> | supérieur
->= | supérieur ou égal
-< | inférieur
-< | inférieur ou égal
+&nbsp;== | égal
+&nbsp;= | non égal
+&nbsp;> | supérieur
+&nbsp;>= | supérieur ou égal
+&nbsp;< | inférieur
+&nbsp;< | inférieur ou égal
 
 Du coup, le résultat est forcément **vrai** ou **faux**. Il n'y a pas de **presque vrai** :-)
 
@@ -70,10 +70,10 @@ Par exemple, ça peut donner :
 ```python
 A=23                                    # initialisation de la variable que je veux tester
 
-if (A > 0):
-    print("Le nombre est positif")      # imprime "Le nombre est positif" si A > 0
-else
-    print("Le nombre est négatif")      # sinon imprime "Le nombre est négatif"
+if (A > 0):                             # si A > 0 alors
+    print("Le nombre est positif")          # imprime "Le nombre est positif" si A > 0
+else                                    # sinon
+    print("Le nombre est négatif")          # imprime "Le nombre est négatif"
 ```
 
 ## Comment combiner des comparaisons
@@ -91,10 +91,10 @@ or | ou
 ```python
 A=23                                                            # initialisation de la variable que je veux tester
 
-if (A >= 10) and (A <= 100):
-    print("Le nombre est supérieur à 10 et inférieur à 100")
-else
-    print("Le nombre n'est pas compris entre 10 et 100")      
+if (A >= 10) and (A <= 100):                                    # si (A<=10) ET (A<=100) alors
+    print("Le nombre est supérieur à 10 et inférieur à 100")        # imprime "Le nombre est supérieur à 10 et inférieur à 100"
+else                                                            # sinon
+    print("Le nombre n'est pas compris entre 10 et 100")            # imprime "Le nombre n'est pas compris entre 10 et 100"
 ```
 
 ### Exemple de comparaison impliquant plusieurs variables
