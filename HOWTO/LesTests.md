@@ -114,10 +114,7 @@ else
 
 ## Programme pour tester tout cela
 Le programme que je vous propose de réaliser est le suivant :
-1. Demander son prénom à l'utilisateur en lui posant une question et stocker la réponse dans une variable
-2. Demander ensuite l'âge de l'utilisateur et stocker la réponse dans une variable
-3. Si l'âge de l'utilisateur est inférieur à 10 ans alors lui dire qu'il a le droit au menu "Enfant"
-4. Si l'âge de l'utilisateur est entre 10 et 18 ans alors lui dire qu'il a le droit au menu "Enfant XL"
-5. Sinon lui dire qu'il a le droit au menu "Adulte" uniquement
-
-Ca serait bien que la phrase l'informant soit du type : "Salut Maxime, tu as le droit au menu Enfant XL". Evidemment, c'est donné à titre d'exemple. "Maxime" doit correspondre au contenu d'une variable qui aura été remplie lors de la question 1. 
+1. Demander à l'utilisateur comment il va
+2. S'il répond "bien" ou "Bien" (avec la majuscule) alors lui dire "C'est super !" sinon lui dire "Trop dommage. J'espère que tu vas aller mieux"
+3. Puis lui demander son âge 
+4. S'il a moins de 11 ans, lui dire "Tu es un enfant". S'il a entre 11 et 18 ans, lui dire que c'est un adolescent. Sinon lui dire que c'est un adulte 
