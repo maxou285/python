@@ -8,3 +8,4 @@ print("Salut les cousins")
 print("Salut Nathan")
 print("Salut Jean")
 print("Bonne rentrée a tous")
+prenom="Salut Maxime"
