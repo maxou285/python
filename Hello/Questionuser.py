@@ -1,16 +1,38 @@
 #! /usr/bin/python3
 
-A="Comment t'appelles tu ?"
-A=input("Comment t'appelles tu ? ")
 
-print("Bienvenue "+A)
-B="Quel age as tu"
-B=input("Quel age as tu ? ")
+prenom=input("Comment t'appelles tu ? ")
+
+print("Bienvenue "+prenom)
+age=input("Quel age as tu ? ")
 print("ok moi j'ai ...")
 print("Rien du tout je suis un ordinateur hahaha ")
 print("Oui je sais je suis un blageur ")
-C="qu'aime tu faire ? "
-C=input("qu'aime tu faire ? ")
+activitee_preferee=input("qu'aime tu faire ? ")
 print("ok cool moi aussi ")
+activitee_preferee2=("et qu'aime tu faire d'autre  ")
+activitee_preferee2=input("ok et quoi d'autres ? ")
+print("ok parfait")
+print("Maintenant faisons un peu de mathématique ")
+A="12 + 145 ? "
+
+
+
+
+print("Combien font "+A )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
