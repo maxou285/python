@@ -4,7 +4,8 @@
 prenom=input("Comment t'appelles tu ? ")
 
 print("Bienvenue "+prenom)
-age=input("Quel age as tu ? ")
+age=inp
+ut("Quel age as tu ? ")
 print("ok moi j'ai ...")
 print("Rien du tout je suis un ordinateur hahaha ")
 print("Oui je sais je suis un blageur ")
@@ -14,12 +15,11 @@ activitee_preferee2=("et qu'aime tu faire d'autre  ")
 activitee_preferee2=input("ok et quoi d'autres ? ")
 print("ok parfait")
 print("Maintenant faisons un peu de mathématique ")
-A="12 + 145 ? "
+ton_resultat=input("Combien font 12 + 145")
+print("Tu penses que la réponse est " + ton_resultat)
+print("La réponse était 157 Bravo si tu as trouvé")
 
 
-
-
-print("Combien font "+A )
 
 
 
