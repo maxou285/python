@@ -17,14 +17,14 @@ print("Maintenant faisons un peu de mathématique ")
 ton_resultat=input("Combien font 12 + 145")
 print("Tu penses que la réponse est " + ton_resultat)
 print("La réponse était 157 Bravo si tu as trouvé")
-
-
-
-
-
-
-
-
+ton_resultat2=input("Combien font 234 - 16 cette fois ? ")
+print("Tu penses que la reponse est " + ton_resultat2 + " ? ")
+print("La reponse a cette deuxième question était 220 Encore bravo si tu avais trouvé")
+print("Humm je vois que tu as un certain niveau... ")
+print("Je pense que nous pouvons donc arréter les additions et les soustractions et passer directement a la suite")
+ton_resultat3=input("Peux tu me dire combien font 3 x 126 ?")
+ton_resultat3=input("Alors comme ca selon toi 3 x 126 est égal a " + ton_resultat3)
+print("La reponse a cette question de niveau supérieur")
 
 
 
