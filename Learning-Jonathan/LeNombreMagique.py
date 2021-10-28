@@ -1,7 +1,7 @@
 import random
 
 
-def demander_nombre(nb_min, nb_max):
+def demander_nombre(nb_min, nb_max):                                # Ici on pose la question et gère les exceptions ou erreurs qu'il pourrait y avoir
     # quel est le nombre magique (entre 1 et 10)
     nombre_int = 0
     while nombre_int == 0:
@@ -13,7 +13,7 @@ def demander_nombre(nb_min, nb_max):
         else:
             if nombre_int < nb_min or nombre_int > nb_max:
                 print(f"ERREUR: Le nombre doit être entre {nb_min} et {nb_max}. Réessayez.")
-                nombre_int = 0
+                nombre_int = 0                      # Je ne comprend pas cette ligne à voir
     return nombre_int
 
 
@@ -22,7 +22,7 @@ NOMBRE_MAX = 10
 NOMBRE_MAGIQUE = random.randint(NOMBRE_MIN, NOMBRE_MAX)
 NB_VIES = 4
 
-"""nombre = 0
+"""nombre = 0                                             # 1 ère méthode pour les conditions et le nombre de vies
 vies = NB_VIES
 while not nombre == NOMBRE_MAGIQUE and vies > 0:
     print(f"Il vous reste {vies} vies")
@@ -39,7 +39,7 @@ while not nombre == NOMBRE_MAGIQUE and vies > 0:
 if vies == 0:
     print(f"Vous avez perdu! Le nombre magique était: {NOMBRE_MAGIQUE}")"""
 
-gagne = False
+gagne = False                                           # 2 è méthode pour les conditions et le nombre de vies 
 for i in range(0, NB_VIES):
     vies = NB_VIES-i
     print(f"Il vous reste {vies} vies")
