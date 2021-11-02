@@ -61,7 +61,7 @@ def tri(element):
 pizzas.sort(key = tri, reverse = True)
 
 for i in pizzas:                # Afficher uniquement les pizzas vegetariennes
-        i.Afficher()
+    i.Afficher()
 
 
     
