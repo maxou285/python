@@ -1,3 +1,5 @@
+from os.path import sep
+
 # PROGRAMMATION ORIENTÉE OBJET 
 # Un objet est une instance de classe 
 # par exemple objet oeuf est une instance de la classe Oeuf
@@ -12,11 +14,24 @@
 # -----DÉFINITION-----
 
 
+## EtreVivant               ## Classe Parent
+#       Chat      Personne  ## Classe Enfants
+class EtreVivant:
+    ESPECE_ETRE_VIVANT = " Etre vivant non identifié "    
 
-class Personne:
+    def Afficher_infos_etre_vivant(self):
+        print("Infos être vivant : " + self.ESPECE_ETRE_VIVANT)
+
+class Chat(EtreVivant):                                         # Chat HERITE de EtreVivant
+    ESPECE_ETRE_VIVANT = "Chat ( Mammifère félin )"        # variable de classe (1 pour toutes les Personnes)
+ 
+class Personne(EtreVivant):                                     # Personne HERITE de EtreVivant
+    ESPECE_ETRE_VIVANT = "Humain ( Mammifère homo sapiens )"        # variable de classe (1 pour toutes les Personnes)
+
     def __init__(self, nom = "", age = 0):
         self.nom = nom               # Crée une variable d'instance : nom
-        self.age = age               # Crée une variable d'instance : age
+        self.age = age                  # Crée une variable d'instance : age
+                   
         print("Constructeur personne " + self.nom)
         if self.nom == "":
             self.Demander_nom()
@@ -45,36 +60,63 @@ class Personne:
         self.nom = input("Quel est votre nom ? ")
         return self.nom
 
+
+
+
+class Etudiant(Personne):
+    def __init__(self, nom , age , etudes ):
+        #self.nom = nom               # Crée une variable d'instance : nom
+        #self.age = age                  # Crée une variable d'instance : age
+        self.etudes = etudes
+        
+        super().__init__(nom, age)      # Appelle le constructeur de la classe parent
+
+    def SePresenter(self):          # Surchargé la méthode se présenter
+        super().SePresenter()
+        print("Je suis étudiant en " + self.etudes)
+        
+        
+
+    
+           # Utilisation de  la variable de class Personne espece_etre_vivant
    
 # -----UTILISATION-----
 
 personne1 = Personne("Jean",30) 
 personne2 = Personne("Paul",15)             # Je crée une personne
 
-liste_personnes = [personne1, personne2, Personne()]
+liste_personnes = [personne1, personne2]
 
 
 
 #personne3 = Personne()
-personne4 = Personne(age = 20)
+#personne4 = Personne(age = 20)
 
 
 
-print("Affichage list 1 ")
-
-for personne in liste_personnes:
-    personne.SePresenter()
-
-
-
-
-liste_personnes.append(personne4)
-
-print("Affichage list 2 ")
-
+#print("Affichage list 1 ")
 
 for personne in liste_personnes:
     personne.SePresenter()
+    personne.Afficher_infos_etre_vivant()
+    print()
+
+
+chat = Chat()
+chat.Afficher_infos_etre_vivant()
+
+etre_vivant = EtreVivant()
+etre_vivant.Afficher_infos_etre_vivant()
+
+etudiant = Etudiant("Marc", 22, "Ecole ingénieur informatique")
+etudiant.SePresenter()
+#liste_personnes.append(personne4)
+
+#print("Affichage list 2 ")
+
+
+#for personne in liste_personnes:
+   # personne.SePresenter()
 
 
 
@@ -113,4 +155,3 @@ afficher_informations_personne(nom2,age2)
 nom3 = demander_nom_personne()
 age3 = 18
 afficher_informations_personne(nom3,age3)"""
-
