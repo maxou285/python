@@ -12,7 +12,7 @@ class Question:
             i += 1
         self.reponse = input("Votre réponse : ")
     def verifier_reponse(self):
-        if  self.reponse.lower() == bonne_reponse[self.nb_question].lower():
+        if  self.reponse.lower() or str(i+1) == bonne_reponse[self.nb_question].lower():
             print("Reponse correcte ")
             return True
         else:
