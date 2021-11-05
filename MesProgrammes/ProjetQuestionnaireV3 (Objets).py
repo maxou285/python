@@ -13,18 +13,26 @@ class Question:
     def verifier_reponse(self):
         global score
         try:
-            if self.reponse == "" or int(self.reponse) > 4:
+            if self.reponse == "" :
                 print("ERREUR : Veuillez rentrer une réponse valide ")
-                erreur = True
-                while erreur == True:
+                while self.reponse == "":
                     i.poser_question()
-                    if self.reponse != "":
-                        if i.verifier_reponse():
-                            score = score + 1
-                        return
+                    if i.verifier_reponse():
+                        score = score + 1
+                    return
+       
+            if int(self.reponse) > 4:
+                print("ERREUR : Veuillez rentrer une réponse valide ")
+                while int(self.reponse) > 4:
+                    i.poser_question()
+                    if i.verifier_reponse():
+                        score = score + 1
+                    return
         except:
-            print("ERREUR : Vous devez rentrer un nombre en 1 et 4")
-                
+            pass
+                       
+       
+       
 
 
         
@@ -36,7 +44,8 @@ class Question:
             return True
         else:
             print("Reponse incorrecte ")
-
+        return
+        
         
             
 
@@ -46,6 +55,7 @@ bonne_reponse_int = [3,1,4]
 bonne_reponse = ["Paris", "Rome", "Bruxelles"]
 score = 0
 nb_totale_questions = 3
+
 
 question1 = Question("Quelle est la capitale de la France ? ","Paris ",0, score)
 question2 = Question("Quelle est la capitale de l'Italie ? ","Rome ",1, score)    
