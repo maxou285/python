@@ -1,4 +1,3 @@
-
 class Question:
     def __init__(self,question, reponse, nb_question,score):
         self.question = question
@@ -6,21 +5,46 @@ class Question:
         self.nb_question = nb_question
         self.score = score
     def poser_question(self):
-        print("  QUESTION numero "+ str(self.nb_question+1) + " : " + self.question )
+        print("  QUESTION numero "+ str(self.nb_question+1) + " : " + self.question)
         for i in range(0,4):
             print(str(i+1) + " - " + str(liste_reponses[self.nb_question][i]))
             i += 1
         self.reponse = input("Votre réponse : ")
     def verifier_reponse(self):
-        if  self.reponse.lower() or str(i+1) == bonne_reponse[self.nb_question].lower():
+        global score
+        try:
+            if self.reponse == "" or int(self.reponse) > 4:
+                print("ERREUR : Veuillez rentrer une réponse valide ")
+                erreur = True
+                while erreur == True:
+                    i.poser_question()
+                    if self.reponse != "":
+                        if i.verifier_reponse():
+                            score = score + 1
+                        return
+        except:
+            print("ERREUR : Vous devez rentrer un nombre en 1 et 4")
+                
+
+
+        
+        if  self.reponse.lower() == bonne_reponse[self.nb_question].lower():
+            print("Reponse correcte ")
+            return True
+        elif self.reponse.lower() == str(bonne_reponse_int[self.nb_question]):
             print("Reponse correcte ")
             return True
         else:
             print("Reponse incorrecte ")
-        
 
+        
+            
+
+            ### Reposer la question 
+
+bonne_reponse_int = [3,1,4]     
 bonne_reponse = ["Paris", "Rome", "Bruxelles"]
-score = 0 
+score = 0
 nb_totale_questions = 3
 
 question1 = Question("Quelle est la capitale de la France ? ","Paris ",0, score)
@@ -34,9 +58,10 @@ liste_reponses = (("Marseille","Nice","Paris","Nantes"),
                  ("Anvers", "Andenne", "Louvain", "Bruxelles")
                  )                   
 
+
                      
 
-
+i = 1
 
 
 for i in liste_question:
@@ -46,11 +71,13 @@ for i in liste_question:
 
 
 print("Score final : " + str(score))
-if score > nb_totale_questions/2:
-    print("Pas mal")
 if score == nb_totale_questions:
     print("Excellent ! ")
-if score < nb_totale_questions/2 and score != 0:
-    print("Peu mieux faire ")
-if score == 0:
+elif score == 0:
     print("Revisez votre géographie ")
+elif score > nb_totale_questions/2:
+    print("Pas mal")
+elif score < nb_totale_questions/2 and score != 0:
+    print("Peu mieux faire ")
+
+    
