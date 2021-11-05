@@ -21,8 +21,13 @@ class Question:
                     return
        
             if int(self.reponse) > 4:
-                print("ERREUR : Veuillez rentrer une réponse valide ")
+                print("ERREUR : Veuillez rentrer une réponse comprise entre 1 et 4 ")
                 while int(self.reponse) > 4:
+                    Question.verif_except()
+                    return
+            if int(self.reponse) < 1:
+                print("ERREUR : Veuillez rentrer une réponse comprise entre 1 et 4")
+                while int(self.reponse) < 1:
                     Question.verif_except()
                     return
         except:
