@@ -5,6 +5,7 @@ class Question:
         self.nb_question = nb_question
 
     def poser_question(self):
+        print()
         print("  QUESTION numero "+ str(self.nb_question+1) + " : " + self.question)
         for i in range(0,4):
             print(str(i+1) + " - " + str(liste_reponses[self.nb_question][i]))
@@ -60,6 +61,7 @@ nb_totale_questions = 3
 question1 = Question("Quelle est la capitale de la France ? ","Paris ",0)
 question2 = Question("Quelle est la capitale de l'Italie ? ","Rome ",1)    
 question3 = Question("Quelle est la capitale de la Belgique ? ","Bruxelles",2)       
+
 liste_question = [question1, question2, question3]
     #("Quelle est la capitale de la France ?",("Marseille","Nice","Paris","Nantes"),"Paris"),
     #("Quelle est la capitale de l'Italie ?", ("Rome", "Venise", "Pise", "Florence"),"Rome")
