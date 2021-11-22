@@ -25,12 +25,9 @@ p.categorie {
 
 div.contenu {
     background-color: white;
-    margin-top: 60;
-    margin-right: 10%;
-    margin-left: 10%;
-    margin-bottom: 80;
-    padding: 50px;
-    min-width: 350px;
+    margin: 0px 8px 40px 8px;
+    padding: 0px 8px 20px 8px;
+    /*min-width: 350px;*/
     box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, .2);
     
 
@@ -77,20 +74,22 @@ table.infos {
     width:100%;
     color: white;
     background-color: #6C829DC0;
-    height: 80px
+    height: 50px
 
 }
 
 table.infos td {
+    font-size: 14px;
     text-align: center;
     vertical-align: top;
 }
 
 table.infos th {
-   font-size: 16px;
+   font-size: 12px;
     vertical-align: bottom;
     padding-bottom: 8px;
 }
+
  
 img.info {
     display: block;
@@ -100,7 +99,7 @@ img.info {
 }
 
 div.colonne {
-    width: 45%;
+    width: 100%;
     margin-top: 20px;
 
 }
@@ -115,13 +114,9 @@ div.colonne h2 {
 
 div.colonne1 {
     display: inline-block;
-    margin-right: 10%;
 }
 
-div.colonne2 {
-    float: right;
-  
-}
+
 
 div.ingredients p {
     text-align: center;
@@ -167,5 +162,54 @@ table.preparation tr {
 
 }
 
+/* Style pour odrinateur */
+@media only screen and (min-width: 768px) {
+
+    div.contenu {
+        margin-top: 60;
+        margin-right: 10%;
+        margin-left: 10%;
+        margin-bottom: 80;
+        padding: 50px;
+        min-width: 350px;
+        
+    }
+   
+    table.infos {
+       
+        height: 80px
+    
+    }
+    
+    table.infos td {
+       font-size: 14px;
+    }
+    
+    table.infos th {
+       font-size: 16px;
+        
+    }
+    div.colonne {
+        width: 45%;
+    
+    }
+    
+    div.colonne1 {
+        margin-right: 10%;
+    }
+    
+    div.colonne2 {
+        float: right;
+    }
+}
 
 
+@media only screen and (min-width: 900px) {
+    div.contenu {
+        margin-left: auto;
+        margin-right: auto;
+        width: 645px;
+        
+    }
+
+}
