@@ -3,6 +3,7 @@ import keyword
 import pygame
 from game import Game
 
+
 pygame.init()
 
 
@@ -38,7 +39,8 @@ while running:
 
     # appliquer l'image à mon joueur 
     screen.blit(game.player.image, game.player.rect)
-
+    screen.blit(game.spawn_monster().monster, game.spawn_monster().monster)
+    
     # vérifier si le joueur souhaite aller à gauche ou à droite
 
     if game.pressed.get(pygame.K_RIGHT) and game.player.rect.x + game.player.rect.width < screen.get_width():                # détecte si le joueur presse la touche(flèche droit)
