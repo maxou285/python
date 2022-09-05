@@ -1,11 +1,17 @@
 import pygame
-import random
+
+#from main import BallSkinIndex, BallSkinsList
 from paddle import Paddle
+import random
+
+
+
 
 class Ball(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load('MesProgrammes/PongGame/ressources/Ball3.png')
+       
+        self.image = pygame.image.load("MesProgrammes/PongGame/ressources/BallRect.png")               # BallSkinsList[BallSkinIndex]      "MesProgrammes/PongGame/ressources/pong_basketballStart.png"
         self.rect = self.image.get_rect()                                     
         self.init_ball_coords()
         self.image.set_colorkey([0, 255, 0])
@@ -14,8 +20,7 @@ class Ball(pygame.sprite.Sprite):
         self.score_J2 = 0
         
     def move(self):
-        self.rect.x += self.speed_x
-        self.rect.y += self.speed_y
+        # detect if players have scored"
         if (self.rect.x > (1080-43)):
             print("Joueur 1 a gagné")
             self.init_ball_coords()
@@ -25,10 +30,12 @@ class Ball(pygame.sprite.Sprite):
             print("Joueur 2 a gagné")
             self.init_ball_coords()
             self.score_J2 += 1
-
+        # makes the ball bounce on Y axis
         if (self.rect.y > (720-43)) or (self.rect.y <= 0):
             self.speed_y = -self.speed_y
-            
+        # updates ball position on screen    
+        self.rect.x += self.speed_x
+        self.rect.y += self.speed_y
         
     def collision(self, paddle):
         if  pygame.Rect.colliderect(self.rect, paddle.rect) == True:
