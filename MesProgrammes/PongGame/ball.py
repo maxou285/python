@@ -11,7 +11,7 @@ class Ball(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
        
-        self.image = pygame.image.load("MesProgrammes/PongGame/ressources/BallRect.png")               # BallSkinsList[BallSkinIndex]      "MesProgrammes/PongGame/ressources/pong_basketballStart.png"
+        self.image = pygame.image.load("ressources/BallRect.png")               # BallSkinsList[BallSkinIndex]      "ressources/pong_basketballStart.png"
         self.rect = self.image.get_rect()                                     
         self.init_ball_coords()
         self.image.set_colorkey([0, 255, 0])
@@ -56,5 +56,5 @@ class Ball(pygame.sprite.Sprite):
             self.speed_y = random.randint(-3,3)*2
         
     #def Score_update(self):
-        #background = pygame.image.load('MesProgrammes/PongGame/ressources/Galaxie1.jpeg') 
+        #background = pygame.image.load('ressources/Galaxie1.jpeg') 
        # screen.blit(background, (-100, -100))

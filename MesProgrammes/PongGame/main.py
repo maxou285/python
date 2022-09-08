@@ -35,7 +35,7 @@ screen = pygame.display.set_mode((1080, 720))                           # Défin
 # 1st parameter is the font file
 # which is present in pygame.
 # 2nd parameter is size of the font
-font = pygame.font.Font('freesansbold.ttf', 32)
+font = pygame.font.Font('ressources/freesansbold.ttf', 32)
 
 # create a text surface object,
 # on which text is drawn on it.
@@ -67,10 +67,10 @@ LeftArrowButtonSurface = pygame.Surface((LeftArrowButtonRect.width, LeftArrowBut
     
 
 
-BallSkinsList = ["MesProgrammes/PongGame/ressources/pong_basketballStart.png", "MesProgrammes/PongGame/ressources/Ball4copie.png","MesProgrammes/PongGame/ressources/BallFootballStart.png","MesProgrammes/PongGame/ressources/BallBeachVolley.png"]    
+BallSkinsList = ["ressources/pong_basketballStart.png", "ressources/Ball4copie.png","ressources/BallFootballStart.png","ressources/BallBeachVolley.png"]    
 BallSkinIndex = 1
 
-BallSkinsListGame = ["MesProgrammes/PongGame/ressources/pong_basketball2.png", "MesProgrammes/PongGame/ressources/Ball4.png","MesProgrammes/PongGame/ressources/BallFootball.png","MesProgrammes/PongGame/ressources/BallBeachVolley copie.png"]      
+BallSkinsListGame = ["ressources/pong_basketball2.png", "ressources/Ball4.png","ressources/BallFootball.png","ressources/BallBeachVolley copie.png"]      
 
 
 
@@ -121,10 +121,10 @@ while wait_before_play == True:
 
 
     ## Afficher l'écran de démarage et le bouton start
-    ScreenStart = pygame.image.load('MesProgrammes/PongGame/ressources/bg.jpg')
+    ScreenStart = pygame.image.load('ressources/bg.jpg')
     screen.blit(ScreenStart, (-100, -100))
 
-    StartButton = pygame.image.load('MesProgrammes/PongGame/ressources/button.png')
+    StartButton = pygame.image.load('ressources/button.png')
     screen.blit(StartButton, (180, 400))
 
     def SwitchBallStart():
@@ -135,16 +135,16 @@ while wait_before_play == True:
     
     SwitchBallStart()
 
-    """BasketBallStart = pygame.image.load('MesProgrammes/PongGame/ressources/pong_basketball2.png') ##### 
+    """BasketBallStart = pygame.image.load('ressources/pong_basketball2.png') ##### 
     BasketBallStart.set_colorkey([0, 255, 0])
     screen.blit(BasketBallStart, (700, 200))"""
 
-    ArrowStartRight = pygame.image.load('MesProgrammes/PongGame/ressources/FlècheDroite2.png')
+    ArrowStartRight = pygame.image.load('ressources/FlècheDroite2.png')
     ArrowStartRight.set_colorkey([0 , 255, 0])
     if BallSkinIndex < (len(BallSkinsList) - 1):
           screen.blit(ArrowStartRight, (720,165))
 
-    ArrowStartLeft = pygame.image.load('MesProgrammes/PongGame/ressources/FlècheGauche2.png')
+    ArrowStartLeft = pygame.image.load('ressources/FlècheGauche2.png')
     ArrowStartLeft.set_colorkey([0 , 255, 0])
     if BallSkinIndex > 0:
         screen.blit(ArrowStartLeft, (275,165))
@@ -215,8 +215,8 @@ while wait_before_play == True:
                 quit()
             pygame.display.update()'''
 # Importer de charger l'arrière plan du jeu
-background = pygame.image.load('MesProgrammes/PongGame/ressources/Galaxie1.jpeg')                    # Charge le background mais ne l'affiche pas encore
-EndBackground = pygame.image.load('MesProgrammes/PongGame/ressources/bg.jpg')
+background = pygame.image.load('ressources/Galaxie1.jpeg')                    # Charge le background mais ne l'affiche pas encore
+EndBackground = pygame.image.load('ressources/bg.jpg')
 # Charger notre jeu
 #### JE JEU COMMENCE REELLEMENT
 
@@ -273,22 +273,22 @@ while INFINITE_LOOP == True:
                 # Test des scores //// /////// ///// //// ///// ////// ////// //// /////  //// //// ///// ///// ///// ////
 
                 if game.ball.score_J1 == 0:
-                    Chiffre0 = pygame.image.load('MesProgrammes/PongGame/ressources/Chiffre0.png') 
+                    Chiffre0 = pygame.image.load('ressources/Chiffre0.png') 
                     screen.blit(Chiffre0, (350, 20))
                 if game.ball.score_J1 == 1:
-                    Chiffre1 = pygame.image.load('MesProgrammes/PongGame/ressources/1Chiffre.png') 
+                    Chiffre1 = pygame.image.load('ressources/1Chiffre.png') 
                     screen.blit(Chiffre1, (350, 20))
                 if game.ball.score_J1 == 2:
-                    Chiffre2 = pygame.image.load('MesProgrammes/PongGame/ressources/Chiffre2.png') 
+                    Chiffre2 = pygame.image.load('ressources/Chiffre2.png') 
                     screen.blit(Chiffre2, (350, 20))
                 if game.ball.score_J1 == 3:
-                    Chiffre3 = pygame.image.load('MesProgrammes/PongGame/ressources/Chiffre3.png') 
+                    Chiffre3 = pygame.image.load('ressources/Chiffre3.png') 
                     screen.blit(Chiffre3, (350, 20))
                 if game.ball.score_J1 == 4:
-                    Chiffre4 = pygame.image.load('MesProgrammes/PongGame/ressources/Chiffre4.png') 
+                    Chiffre4 = pygame.image.load('ressources/Chiffre4.png') 
                     screen.blit(Chiffre4, (350, 20))
                 if game.ball.score_J1 == 5:
-                    Chiffre5 = pygame.image.load('MesProgrammes/PongGame/ressources/Chiffre5.png') 
+                    Chiffre5 = pygame.image.load('ressources/Chiffre5.png') 
                     screen.blit(Chiffre5, (350, 20))
                     print("Victoire du Joueur 1")
                     running = False
@@ -297,22 +297,22 @@ while INFINITE_LOOP == True:
                     wait_before_play = True
 
                 if game.ball.score_J2 == 0:
-                    Chiffre0 = pygame.image.load('MesProgrammes/PongGame/ressources/Chiffre0.png') 
+                    Chiffre0 = pygame.image.load('ressources/Chiffre0.png') 
                     screen.blit(Chiffre0, (520, 20))
                 if game.ball.score_J2 == 1:
-                    Chiffre1 = pygame.image.load('MesProgrammes/PongGame/ressources/1Chiffre.png') 
+                    Chiffre1 = pygame.image.load('ressources/1Chiffre.png') 
                     screen.blit(Chiffre1, (520, 20))
                 if game.ball.score_J2 == 2:
-                    Chiffre2 = pygame.image.load('MesProgrammes/PongGame/ressources/Chiffre2.png') 
+                    Chiffre2 = pygame.image.load('ressources/Chiffre2.png') 
                     screen.blit(Chiffre2, (520, 20))
                 if game.ball.score_J2 == 3:
-                    Chiffre3 = pygame.image.load('MesProgrammes/PongGame/ressources/Chiffre3.png') 
+                    Chiffre3 = pygame.image.load('ressources/Chiffre3.png') 
                     screen.blit(Chiffre3, (520, 20))
                 if game.ball.score_J2 == 4:
-                    Chiffre4 = pygame.image.load('MesProgrammes/PongGame/ressources/Chiffre4.png') 
+                    Chiffre4 = pygame.image.load('ressources/Chiffre4.png') 
                     screen.blit(Chiffre4, (520, 20))
                 if game.ball.score_J2 == 5:
-                    Chiffre5 = pygame.image.load('MesProgrammes/PongGame/ressources/Chiffre5.png') 
+                    Chiffre5 = pygame.image.load('ressources/Chiffre5.png') 
                     screen.blit(Chiffre5, (520, 20))
                     print("Victoire du Joueur 2")
                     running = False
@@ -344,7 +344,7 @@ while INFINITE_LOOP == True:
     # 1st parameter is the font file
     # which is present in pygame.
     # 2nd parameter is size of the font
-    font = pygame.font.Font('freesansbold.ttf', 32)
+    font = pygame.font.Font('ressources/freesansbold.ttf', 32)
 
     # create a text surface object,
     # on which text is drawn on it.
@@ -403,19 +403,19 @@ while INFINITE_LOOP == True:
 
         ################################################################################
         ## Afficher l'écran de démarage et le bouton start
-        ScreenStart = pygame.image.load('MesProgrammes/PongGame/ressources/bg.jpg')
+        ScreenStart = pygame.image.load('ressources/bg.jpg')
         screen.blit(ScreenStart, (-100, -100))
-        StartButton = pygame.image.load('MesProgrammes/PongGame/ressources/button.png')
+        StartButton = pygame.image.load('ressources/button.png')
         screen.blit(StartButton, (180, 400))
 
         SwitchBallStart()
 
-        ArrowStartRight = pygame.image.load('MesProgrammes/PongGame/ressources/FlècheDroite2.png')
+        ArrowStartRight = pygame.image.load('ressources/FlècheDroite2.png')
         ArrowStartRight.set_colorkey([0 , 255, 0])
         if BallSkinIndex < (len(BallSkinsList) - 1):
             screen.blit(ArrowStartRight, (720,165))
 
-        ArrowStartLeft = pygame.image.load('MesProgrammes/PongGame/ressources/FlècheGauche2.png')
+        ArrowStartLeft = pygame.image.load('ressources/FlècheGauche2.png')
         ArrowStartLeft.set_colorkey([0 , 255, 0])
         if BallSkinIndex > 0:
             screen.blit(ArrowStartLeft, (275,165))
