@@ -1,7 +1,7 @@
 import pygame
 
 #from main import BallSkinIndex, BallSkinsList
-from paddle import Paddle
+
 import random
 
 
@@ -37,8 +37,8 @@ class Ball(pygame.sprite.Sprite):
         self.rect.x += self.speed_x
         self.rect.y += self.speed_y
         
-    def collision(self, paddle):
-        if  pygame.Rect.colliderect(self.rect, paddle.rect) == True:
+    def collision(self, paddle, paddleopponent):
+        if  pygame.Rect.colliderect(self.rect, paddle.rect) or pygame.Rect.colliderect(self.rect, paddleopponent.rectopponent) == True:
             self.speed_x = -self.speed_x
             if self.speed_x > 0:
                 self.speed_x += 1

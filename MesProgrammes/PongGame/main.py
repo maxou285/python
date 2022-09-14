@@ -15,7 +15,6 @@ pygame.init()
 
 
 
-
  
 # define the RGB value for white,
 #  green, blue colour .
@@ -244,7 +243,7 @@ while INFINITE_LOOP == True:
             
                 # appliquer l'image à mon joueur 
                 screen.blit(game.paddle.image, game.paddle.rect)
-                screen.blit(game.paddleopponent.image, game.paddleopponent.rect)
+                screen.blit(game.paddleopponent.imageopponent, game.paddleopponent.rectopponent)
             
             
             
@@ -254,8 +253,8 @@ while INFINITE_LOOP == True:
                 
                 #screen.blit(game.spawn_monster().monster, game.spawn_monster().monster)
                 game.ball.move()
-                game.ball.collision(game.paddle)
-                game.ball.collision(game.paddleopponent)
+                game.ball.collision(game.paddle, game.paddleopponent)
+                
                 # vérifier si le joueur souhaite aller à gauche ou à droite
 
                 if game.pressed.get(pygame.K_a) and game.paddle.rect.x + game.paddle.rect.width < screen.get_width():                # détecte si le joueur presse la touche(flèche droit)
@@ -263,10 +262,11 @@ while INFINITE_LOOP == True:
                 elif game.pressed.get(pygame.K_q) and game.paddle.rect.x > 0:                # détecte si le joueur presse la touche(flèche droit)
                         game.paddle.move_down()
 
-                if game.pressed.get(pygame.K_p) and game.paddle.rect.x + game.paddle.rect.width < screen.get_width():                # détecte si le joueur presse la touche(flèche droit)
-                    game.paddleopponent.move_up()                           # si c'est le cas actionner la méthode move_right qui le fais aller à droit
-                elif game.pressed.get(pygame.K_m) and game.paddle.rect.x > 0:                # détecte si le joueur presse la touche(flèche droit)
-                        game.paddleopponent.move_down() 
+                if game.pressed.get(pygame.K_p) and game.paddleopponent.rect.x + game.paddleopponent.rect.width < screen.get_width():                # détecte si le joueur presse la touche(flèche droit)
+                    game.paddleopponent.move_up_opponent()                           # si c'est le cas actionner la méthode move_right qui le fais aller à droit
+                elif game.pressed.get(pygame.K_m) and game.paddleopponent.rect.x > 0:                # détecte si le joueur presse la touche(flèche droit)
+                        game.paddleopponent.move_down_opponent()
+                
 
                 #print(game.player.rect.x)
                 clock.tick(60)              # Nombre de FPS
