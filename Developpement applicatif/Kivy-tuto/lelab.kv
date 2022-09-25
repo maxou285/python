@@ -1,0 +1,105 @@
+WidgetsExemple:              
+
+
+
+<WidgetsExemple>:
+    cols: 3
+    Button:
+        text: "Cliquez"
+        on_press: root.on_button_click()              # On peut utiliser du code python dans le fichier kv Ici root est l'équivalent de self mais ici self ferait reference au bouton alors qu'on veut faire reference a WidgetsExemple
+    Label: 
+        text: root.mon_texte
+    
+
+<PageLayoutExemple@PageLayout>
+    MainWidget:
+    BoxLayoutExemple:
+    AnchorLayoutExemple:
+    GridLayoutExemple:
+
+
+<ScrollViewExemple@ScrollView>
+    StackLayoutExemple:              # enfant 
+        size_hint: 1, None
+        height: self.minimum_height  # pour scroller jusqu'a la bonne hauteur meme si l fenetre est retaillée
+
+
+<StackLayoutExemple>:            # avec un stacklayout il faut donner la taille de chaque élements
+    # 'left-right', 'top-bottom'
+    #orientation : "lr-bt"        # lr = left-right et bt = bottom-top du bas vers le haut
+    #padding: ("20dp", "20dp", "20dp", "20dp")
+    #spacing: "20dp", "20dp"
+
+<GridLayoutExemple@GridLayout>:        # L'autre manière de dire que GridlayoutExemple hérite de GridLayout ca permet de ne pas avoir besoin de créer la class dans le .py
+    # rows
+    # cols
+    cols : 3
+    Button:
+        text : "A"
+        size_hint: .5, 1        # Il faut mettre les propriétés sur tous les éléments puisque ca marche par colonne ici il faut mettre la propriété sur A et D 
+    BoxLayoutExemple:
+    Button:
+        text : "C"
+    Button:
+        text : "D"
+        size_hint: .5, 1
+    Button:
+        text : "E"
+    Button:
+        text : "F"
+
+
+
+
+
+<AnchorLayoutExemple>
+    # right, left, center
+    anchor_x : "center"
+    # bottom, top, center
+    anchor_y : "top"
+    BoxLayout:
+        size_hint: .2, .2
+        Button:
+            text : "A" 
+        Button:
+            text : "B"
+       
+
+
+<BoxLayoutExemple>
+    orientation: "horizontal" 
+    Button:
+        text: "A"
+        size_hint: .5, .5           # Pour modifier la taille dest boutons dans un layout(normalement ca s'adapte tout seul) Avec size_hint les paramètres sont en pourcent 1 = 100/100
+        # size: "100dp",
+        #height: "60dp"
+        # x, right, center_x
+        # y, top, center_y
+        pos_hint: { "top" : 1}
+    
+    
+    BoxLayout:
+        spacing: "10dp"             # le spacing pour set un espace entre les élements
+        orientation : "vertical"
+        Button:
+            text: "B1"
+        Button:
+            text: "B2"
+        Button:
+            text: "B3"
+        Button:
+            text: "B4"
+    Label:
+        text: "C"
+
+<MainWidget>
+    Button:
+        text: "Hello"
+        size: "100dp","60dp"
+        pos: "200dp","100dp"
+        color: 0, 0, 1, 1 
+    Label:
+        text: "Hello2"
+        size: "100dp","60dp"
+        pos: "400dp","200dp"
+        color: 1, 0, 0, 1                 
