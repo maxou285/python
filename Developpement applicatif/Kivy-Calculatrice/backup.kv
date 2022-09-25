@@ -1,0 +1,96 @@
+StackLayoutExemple:
+
+<StackLayoutExemple>:
+    Label:
+        text: str(root.mon_resultat)
+        size_hint: 1, .2
+    Button: 
+        text : "AC"
+        size_hint: .25, .16
+        on_press: root.on_button_click("AC")
+        background_color: (1, .85, .85, .85)
+    Button: 
+        text : "+/-"
+        size_hint: .25, .16
+        on_press: root.on_button_click(operateur = "+/-")
+        background_color: (1, .85, .85, .85)
+    Button: 
+        text : "%"
+        size_hint: .25, .16
+        on_press: root.on_button_click(operateur = "%")
+        background_color: (1, .85, .85, .85)
+    Button: 
+        text : "÷"
+        size_hint: .25, .16
+        on_press: root.on_button_click(operateur = "/")
+        background_color: (250, .5, 0, 1)
+
+
+    Button: 
+        text : "7"
+        size_hint: .25, .16
+        on_press: root.on_button_click("7")
+    Button: 
+        text : "8"
+        size_hint: .25, .16
+        on_press: root.on_button_click("8")
+    Button: 
+        text : "9"
+        size_hint: .25, .16
+        on_press: root.on_button_click("9")
+    Button: 
+        text : "×"
+        size_hint: .25, .16
+        on_press: root.on_button_click(operateur = "*")
+        background_color: (250, .5, 0, 1)
+
+    
+    Button: 
+        text : "4"
+        size_hint: .25, .16
+        on_press: root.on_button_click("4")
+    Button: 
+        text : "5"
+        size_hint: .25, .16
+        on_press: root.on_button_click("5")
+    Button: 
+        text : "6"
+        size_hint: .25, .16
+        on_press: root.on_button_click("6")
+    Button: 
+        text : "-"
+        size_hint: .25, .16
+        on_press: root.on_button_click(operateur = "-")
+        background_color: (250, .5, 0, 1)
+    
+    Button: 
+        text : "1"
+        size_hint: .25, .16
+        on_press: root.on_button_click("1")
+    Button: 
+        text : "2"
+        size_hint: .25, .16
+        on_press: root.on_button_click("2")
+    Button: 
+        text : "3"
+        size_hint: .25, .16
+        on_press: root.on_button_click("3")
+    Button: 
+        text : "+"
+        size_hint: .25, .16
+        on_press: root.on_button_click(operateur = "+")
+        background_color: (250, .5, 0, 1)
+
+    Button: 
+        text : "0"
+        size_hint: .5, .16
+        on_press: root.on_button_click("0")
+    Button: 
+        text : ","
+        size_hint: .25, .16
+        on_press: root.on_button_click(".")
+    Button: 
+        text : "="
+        size_hint: .25, .16
+        on_press: root.on_button_click(equal = True)
+        background_color: (250, .5, 0, 1)
