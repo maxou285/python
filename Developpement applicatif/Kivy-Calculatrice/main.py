@@ -1,8 +1,7 @@
 # Pour que ca fonctionne il faut selectionner le bon interpreteur python ici je suis dans venv dans le terminal et python 3.10('venv':venv)
 
 
-from turtle import onclick
-from unittest import result
+
 from kivy.app import App                          #Structuer de bas de kivy 1 class App 1 class MainWidget ou layout et .run
 from kivy.uix.widget import Widget
 from kivy.uix.stacklayout import StackLayout
