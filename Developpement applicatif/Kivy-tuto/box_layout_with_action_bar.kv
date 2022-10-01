@@ -1,0 +1,10 @@
+<BoxLayoutWithActionBar>:
+    orientation: "vertical"
+    ActionBar:                                  # Action Bar permet de faire un bouton pour retour pas exemple
+        ActionView:
+            ActionPrevious:
+                title: root.title
+                on_release: app.manager.pop()            # root.parent.parent.pop() pourrait aussi marcher dans certains cas mais l'autre option est plus générale et marchera dans tous les cas
+                app_icon: "images/lab_logo.png"
+                app_icon_height: "28dp"
+                app_icon_width: "28dp"
