@@ -4,7 +4,7 @@ import pygame
 class Player(pygame.sprite.Sprite):
     def __init__(self, x, y):
         super().__init__()
-        self.sprite_sheet = pygame.image.load('MesProgrammes/ProjetMaison2D/PlayerSpriteSheet2.png')
+        self.sprite_sheet = pygame.image.load('MesProgrammes/ProjetMaison2D/PlayerSpriteSheet2.png')        # MesProgrammes/ProjetMaison2D/PlayerSpriteSheet2.png
         self.image = self.get_image(0, 0)
         self.image.set_colorkey([255, 0, 0])
         self.rect = self.image.get_rect()
