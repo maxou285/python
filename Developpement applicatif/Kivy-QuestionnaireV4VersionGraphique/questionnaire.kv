@@ -1,0 +1,38 @@
+
+
+MenuPrincipal:
+
+<MenuPrincipal@BoxLayout>:
+    orientation: "vertical"
+    Label:
+        text: " Cette application est l'adaptation graphique du petit projet questionnaire "
+    Button:
+        text: "Cliquez ici pour commencer le questionnaire"
+        on_press: app.manager.push("Question1")
+
+
+<Question1>:
+    orientation: "vertical"
+    Label:
+        text: root.answer
+        size_hint: 1, .75
+    Button:
+        text:"Bruxelles"
+        on_press: root.verify_answer(self.text)
+    Button:
+        text:"Rome"
+        on_press: root.verify_answer(self.text)
+    Button:
+        text:"Barcelone"
+        on_press: root.verify_answer(self.text)
+    Button:
+        text:"Paris"
+        on_press: root.verify_answer(self.text)
+
+<MyScreenManager@NavigationScreenManager>:
+    Screen:
+        text: "MenuPrincipal"
+        MenuPrincipal:
+    Screen:
+        name: "Question1"
+        Question1:

@@ -6,11 +6,12 @@ while password != "gentil":
   if password == "gentil":   
     print("Mot de passe correct vous avez accès à vos données")
     break
-  elif password == "":
-    print("Vous devez rentrez un mot de passe")
-    print("Mot de passe incorrect, veuillez réessayer il vous reste encore " + str(tentatives) + " essais ")
-  else:
-    print("Mot de passe incorrect, veuillez réessayer il vous reste encore " + str(tentatives) + " essais ")
+  if tentatives > 0:
+    if password == "":
+      print("Vous devez rentrez un mot de passe")
+      print("Mot de passe incorrect, veuillez réessayer il vous reste encore " + str(tentatives) + " essais ")
+    else:
+      print("Mot de passe incorrect, veuillez réessayer il vous reste encore " + str(tentatives) + " essais ")
   if tentatives == 0:
       print("Plus de tentatives veuillez réessayer plus tard")
       break
