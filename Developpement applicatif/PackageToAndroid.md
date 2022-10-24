@@ -45,6 +45,13 @@ Notez qu'il faut dans requirements spécifier tous les modules utilisés et il e
 5. buildozer --verbose android run
 Commande « tout en un » : buildozer --verbose android debug deploy run
 
+ATTENTION: Il peut arriver que l'ordinateur ou la VM ne reconnaise pas le telephone dans ce cas il va nous falloir trouver un autre moyen de récupérer le fichier .apk
+Sur la VM
+1. Copier coller le fichier .apk dans le repertoire partagé entre l'ordinateur et la VM de cette manière on récupère le fichier .apk sur notre ordinateur
+2. S'envoyer le fichier .apk par gmail sous forme de lien google drive pour éviter les refus d'ouverture à l'arrivée
+3. Depuis un téléphone télécharger le fichier .apk et l'ouvrir en ayant éctivé l'option ouvrir les apps téléchargées depuis internet
+
+
 # 5) Bugs récurrents
 ATTENTION la VM téléchargeable est presque déja entièrement configurée cependant j'ai rencontré certain bugs lorsque j'ai moi mème essayé de compiler un projet
 1) Lors de la commande buildozer --verbose android debug vous pourriez avoir un bug au début de la compilation 
