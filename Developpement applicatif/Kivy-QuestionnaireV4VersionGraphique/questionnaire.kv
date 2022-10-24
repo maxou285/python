@@ -15,19 +15,22 @@ MenuPrincipal:
     orientation: "vertical"
     Label:
         text: root.answer
-        size_hint: 1, .75
-    Button:
+    ToggleButton:
         text:"Bruxelles"
         on_press: root.verify_answer(self.text)
-    Button:
+        group: "answer"
+    ToggleButton:
         text:"Rome"
         on_press: root.verify_answer(self.text)
-    Button:
+        group: "answer"
+    ToggleButton:
         text:"Barcelone"
         on_press: root.verify_answer(self.text)
-    Button:
+        group: "answer"
+    ToggleButton:
         text:"Paris"
         on_press: root.verify_answer(self.text)
+        group: "answer"
 
 <MyScreenManager@NavigationScreenManager>:
     Screen:
