@@ -1,0 +1,133 @@
+MyScreenManager:
+<MyScreenManager>:
+   
+    Screen:
+        name: "MainGame"
+        RelativeLayout:
+            MainGame:
+            Widget:
+                MDIconButton:
+                    text: "Hello"
+                    on_press: app.manager.push("Explaination")
+                    size: 100,100
+                    pos_hint: None, None
+                    x: 10
+                    y: 10
+                    icon: "account"
+           
+            #Label:
+            #    text: "Press me"
+            #    size_hint: .2,.2
+            #    color: 1,0,0
+    Screen:
+        name: "Explaination"
+        Explaination:
+        Widget:
+            MDIconButton:
+                text: "Hello"
+                #on_press: root.current = "Explaination"
+                size: 100,100
+                pos_hint: None, None
+                x: root.width*0.01
+                y: root.height*0.92
+                icon: "keyboard-backspace"
+                on_press: app.manager.pop()
+
+                
+
+
+<Explaination@Screen>
+    BoxLayout:
+        Label:
+            color: 0,0,0
+            text:"[color=ff3333][b]Hello readers[/b][/color]\nTo explain briefly IsPremier is an application\n i created using the python module Kivy.\nBasically it allows users to enter a number and \nthen find out whether it is a prime number.\nWith Kivy i made the mechanical part of the app\nThe UI part was made using KivyMD it's a module \nrelated to Kivy but it isn't include in the kivy import so\nyou have to import kivymd separately\n\nTechnologies used : \n  Python3.10.0\n  Kivy\n  KivyMD\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+            size_hint: 1,1
+            markup: True
+<MainGame@Screen>
+   
+    MDBoxLayout:
+        
+        orientation: "vertical"
+
+        MDTopAppBar:
+            title: "[font=resources/fonts/ChunkFivePrint.otf]IsPremier[/font]"
+
+        Widget:
+            MDTextField:
+                mode: "round"
+                #icon_left: "email"
+                id: input
+                size_hint: (None, None)
+                pos: root.width*0.29,root.height*0.35        #0.3
+                height: root.height*0.07
+                width: root.width*0.42
+                multiline: False
+                hint_text: "Rentrez un nombre"
+                halign: "center"
+                input_filter: "int"
+                on_double_tap: self.text = ""
+
+
+
+
+            RoundedButton:
+                text: "Voir Résultats"
+                pos: root.width*0.35,root.height*0.26        #0.22
+                size_hint: None, None
+                height: root.height*0.05
+                width: root.width*0.3
+                #size: 450,70
+                on_press: app.is_premier(input.text)
+                #border: (30,30,30,30)
+
+                
+            Label:
+                text: app.text_input
+                #size: "100dp","60dp"
+                #pos: "400dp","200dp"
+                color: 0, 0, 0, 1
+                pos: root.width*0.38,root.height*0.1
+                size_hint: (None, None)
+                height: root.height*0.1
+                width: root.width*0.23
+                
+            Label:
+                id: label_ispremier
+                text: "     [i]NumberBases\n[color=3333ff][i][size=40][b][font=resources/fonts/SEASRN__.ttf]IsPremier[/b][/size][/i][/color]"
+                color: 0,0,0
+                pos: root.width*0.4,root.height*0.6          #42
+                #size: root.width*0.2,root.height*0.01
+                markup: True
+           #MDIcon:
+           #    icon: "counter"
+           #    pos: root.width*0.16,root.height*0.56
+           #    font_size: 200
+            MDIcon:
+                icon: "counter"
+                #pos: root.width*0.59,root.height*0.605
+                pos: root.width*0.4+label_ispremier.width+37,label_ispremier.y+10
+                font_size: root.height*0.04
+
+<RoundedButton@Button>
+    background_color: (0,0,0,0)
+    #background_normal: ''
+    canvas.before:
+        Color:
+            rgba: (48/255,84/255,150/255,1)
+            on_press: rgba: (1,0,0,1)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [32]
+
+<RoundedButton2@Button>
+    background_color: (0,0,0,0)
+    #background_normal: ''
+    canvas.before:
+        Color:
+            rgba: (48/255,84/255,150/255,1)
+            on_press: rgba: (1,0,0,1)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [58]
