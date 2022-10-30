@@ -1,63 +1,16 @@
-from os.path import curdir
-
-from kivy.app import App
-from kivy.lang import Builder
-from kivy.metrics import sp
-from kivy.properties import (Clock, DictProperty, NumericProperty,
-                             StringProperty)
-from kivy.uix.textinput import TextInput
+#############################################################################################
+# Les Imports de Librairie
+#############################################################################################
+from kivy.properties import (Clock, DictProperty, NumericProperty,StringProperty)
 from kivy.uix.widget import Widget
 from kivymd.app import MDApp
-
-
-# Tout le code en commentaire revient au meme mais sans le fichier kv c'est la 2e facon de faire avec kivy si on ne veut pas utiliser le fichier kv
-# mais avec cette facon il faut utiliser la fonction build dans la classe App
-"""
-            size_hint: (None, None)
-            pos: root.width*0.4,root.height*0.1
-            height: root.height*0.1
-            width: root.width*0.23
-            text: app.text_input
-
-KV = '''
-MDBoxLayout:
-    
-    orientation: "vertical"
-
-    MDTopAppBar:
-        title: "MDTopAppBar"
-    Widget:
-        TextInput:
-            id: input
-            size_hint: (None, None)
-            pos: root.width*0.4,root.height*0.3
-            height: root.height*0.04
-            width: root.width*0.23
-            multiline: False
-            text: "Rentrez un nombre"
-            on_double_tap: self.text = ""
-
-        Button:
-            text: "Voir Résultats"
-            pos: root.width*0.4,root.height*0.22
-            size_hint: None, None
-            height: root.height*0.05
-            width: root.width*0.23
-            size: 350,70
-            on_press: app.is_premier(input.text)
-        TextInput:
-            size_hint: (None, None)
-            pos: root.width*0.4,root.height*0.1
-            height: root.height*0.1
-            width: root.width*0.23
-            text: app.text_input
-            on_double_tap: self.text = ""
-'''
-"""
+from kivymd.uix.card import MDCard
 from kivy.uix.screenmanager import ScreenManager
+from kivy.core.window import Window
 
-# On utilise ce fichier pour perfectionner le fonctionnement des ScreenManagers comme ca on pourra aussi simplement revenir en arrière 
-
+#############################################################################################
+# Déclaration des différentes classes
+#############################################################################################
 
 class NavigationScreenManager(ScreenManager):
     screen_stack = []
@@ -75,12 +28,17 @@ class NavigationScreenManager(ScreenManager):
             self.transition.direction = "right"
             self.current = screen_name
 
+
 class MyScreenManager(NavigationScreenManager):
     pass
-# To explain briefly IsPremier is a little project of mine\n                       made with the kivy python module. The user have to enter a number in the field\n                and click on the button.Then the app will tell him if the number is a prime number or not"
-class MainWidget(Widget):
-    pass
 
+class MD3Card(MDCard):
+    '''Implements a material design v3 card.'''
+    text = StringProperty()
+
+#############################################################################################
+# Déclaration de la classe App
+#############################################################################################
 class IsPremierApp(MDApp):
     text_input = StringProperty("Rentrez un nombre")
     text_answer = StringProperty("Réponses : ")
@@ -107,7 +65,9 @@ class IsPremierApp(MDApp):
         except:
             self.text_input = "Rentrez un nombre correct"
 
-    def call(self):
-        print("Called")
 
+#############################################################################################
+# Programme Principal
+#############################################################################################
+Window.size = (380, 700)
 IsPremierApp().run()
