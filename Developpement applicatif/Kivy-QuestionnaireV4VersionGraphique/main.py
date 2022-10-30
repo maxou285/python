@@ -1,28 +1,35 @@
-
-from tkinter.ttk import Button
-
-from kivy.app import *
-from kivy.properties import ObjectProperty, StringProperty
+##############################################################################################
+# Les imports de librairie
+##############################################################################################
+from kivy.app import App
+from kivy.properties import (  NumericProperty, ObjectProperty, StringProperty, ListProperty)
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.screenmanager import ScreenManager
 
-# On utilise ce fichier pour perfectionner le fonctionnement des ScreenManagers comme ca on pourra aussi simplement revenir en arrière 
 
-answers = ["Paris", "", "", ""]
 
+#from kivy.config import Config
+#Config.set('graphics', 'default_font', '["GrestalScriptDemoRegular-dBYX", "fonts/GrestalScriptDemoRegular-dBYX.otf"]')
+
+
+#ANSWERS = ["Paris", "Rome", "Bruxelles", "Lisbonne"]
+
+##############################################################################################
+# Déclaration des classes des différentes questions
+##############################################################################################
 class Question1(BoxLayout):
     answer = StringProperty("Quelle est la capitale de la France ?")
-    def verify_answer(self, text):
-        self.answer = text
-        if self.answer == answers[0]:
-            print("Correct")
-            self.answer = "Bravo ! "
-            
-            
-        else:
-            print("Incorrect")
-            self.answer = "Mauvaise Réponse réessaie ! "
-
+    score_int = NumericProperty(0) 
+class Question2(BoxLayout):
+    answer = StringProperty("Quelle est la capitale de l'Italie ?")   
+class Question3(BoxLayout):
+    answer = StringProperty("Quelle est la capitale de la Belgique ?")  
+class Question4(BoxLayout):
+    answer = StringProperty("Quelle est la capitale du Portugal ?")
+     
+##############################################################################################
+# SceenManager
+##############################################################################################
 class NavigationScreenManager(ScreenManager):
     screen_stack = []
 
@@ -31,7 +38,9 @@ class NavigationScreenManager(ScreenManager):
             self.screen_stack.append(self.current)
             self.transition.direction = "left"
             self.current = screen_name
+            #score += 1
 
+      
     def pop(self):
         if len(self.screen_stack) > 0:
             screen_name = self.screen_stack[-1]                 # -1 est le dernier élément d'une liste
@@ -42,15 +51,23 @@ class NavigationScreenManager(ScreenManager):
 class MyScreenManager(NavigationScreenManager):
    pass
 
-
+##############################################################################################
+# Définition de la classe App
+##############################################################################################
 class QuestionnaireApp(App):
     manager = ObjectProperty(None)
-
+    number = NumericProperty(0)
+    list = ListProperty()
+    appréciation = StringProperty()
+    
+       
     def build(self):
         self.manager = MyScreenManager()
         return self.manager
 
-
-
+        
+##############################################################################################
+# Programme Principal
+##############################################################################################
 
 QuestionnaireApp().run()

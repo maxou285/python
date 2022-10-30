@@ -1,4 +1,13 @@
+#############################################################################################
+# Interface Principale
+#############################################################################################
+
 MyScreenManager:
+
+#############################################################################################
+# Définition de l'interface principale
+#############################################################################################
+
 <MyScreenManager>:
    
     Screen:
@@ -14,11 +23,6 @@ MyScreenManager:
                     x: 10
                     y: 10
                     icon: "account"
-           
-            #Label:
-            #    text: "Press me"
-            #    size_hint: .2,.2
-            #    color: 1,0,0
     Screen:
         name: "Explaination"
         Explaination:
@@ -35,14 +39,30 @@ MyScreenManager:
 
                 
 
+#############################################################################################
+# Définition des différents écrans
+#############################################################################################
 
 <Explaination@Screen>
-    BoxLayout:
-        Label:
-            color: 0,0,0
-            text:"[color=ff3333][b]Hello readers[/b][/color]\nTo explain briefly IsPremier is an application\n i created using the python module Kivy.\nBasically it allows users to enter a number and \nthen find out whether it is a prime number.\nWith Kivy i made the mechanical part of the app\nThe UI part was made using KivyMD it's a module \nrelated to Kivy but it isn't include in the kivy import so\nyou have to import kivymd separately\n\nTechnologies used : \n  Python3.10.0\n  Kivy\n  KivyMD\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-            size_hint: 1,1
-            markup: True
+    #BoxLayout:
+    Label:
+        #disabled: True
+        #background_disabled_normal: self.background_normal
+        pos_hint: {'x': 0,'top': 1}
+        size_hint: 1,1
+        color: 0,0,0
+        text:"[color=ff3333][b]Hello readers[/b][/color]\nTo explain briefly IsPremier is an application\n i created using the python module Kivy.\nBasically it allows users to enter a number and \nthen find out whether it is a prime number.\nWith Kivy i made the mechanical part of the app\nThe UI part was made using KivyMD it's a module \nrelated to Kivy but it isn't include in the kivy import so\nyou have to import kivymd separately\n\nTechnologies used : \n  Python3.10.0\n  Kivy\n  KivyMD\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+        markup: True
+        #halign: 'left'
+        #text_size: root.width-1000,root.height
+    Label:
+        canvas.before:
+            Color:
+                rgba: 0, 0, 0, 1
+            Line:    # --- adds a border --- #
+                width: 2
+                rectangle: self.x+6, self.y+6, self.width-11, self.height-11  # +6 +6 - 11 - 11
+                    
 <MainGame@Screen>
    
     MDBoxLayout:
@@ -95,9 +115,16 @@ MyScreenManager:
                 id: label_ispremier
                 text: "     [i]NumberBases\n[color=3333ff][i][size=40][b][font=resources/fonts/SEASRN__.ttf]IsPremier[/b][/size][/i][/color]"
                 color: 0,0,0
-                pos: root.width*0.4,root.height*0.6          #42
+                pos: root.width*0.45,root.height*0.6          #42
                 #size: root.width*0.2,root.height*0.01
                 markup: True
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 1
+                    Line:    # --- adds a border --- #
+                        width: 2
+                        rectangle: self.x-dp(50), self.y-dp(5), self.width+dp(100), self.height+dp(10)
+ 
            #MDIcon:
            #    icon: "counter"
            #    pos: root.width*0.16,root.height*0.56
@@ -105,8 +132,15 @@ MyScreenManager:
             MDIcon:
                 icon: "counter"
                 #pos: root.width*0.59,root.height*0.605
-                pos: root.width*0.4+label_ispremier.width+37,label_ispremier.y+10 #+37 +10
+                #pos: root.width*0.4+label_ispremier.width+37,label_ispremier.y+10 #+37 +10
+                pos: root.width*0.45+label_ispremier.width+37,label_ispremier.y+10 #+37 +10
                 font_size: root.height*0.04
+
+
+
+#############################################################################################
+# Définiton des widgets utilisés par les écrans
+#############################################################################################
 
 <RoundedButton@Button>
     background_color: (0,0,0,0)

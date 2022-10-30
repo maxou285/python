@@ -1,41 +1,222 @@
+##############################################################################################
+# Interface Principale
+##############################################################################################
+MyScreenManager:
 
+##############################################################################################
+# Set de la font utilisé par tout le jeu
+##############################################################################################
+<Widget>:                       
+    font_size: dp(20)
+    font_name: 'fonts/Chunk Five Print.otf'
 
-MenuPrincipal:
+##############################################################################################
+# Définition du ScreenManager
+##############################################################################################
 
-<MenuPrincipal@BoxLayout>:
-    orientation: "vertical"
-    Label:
-        text: " Cette application est l'adaptation graphique du petit projet questionnaire "
-    Button:
-        text: "Cliquez ici pour commencer le questionnaire"
-        on_press: app.manager.push("Question1")
-
-
-<Question1>:
-    orientation: "vertical"
-    Label:
-        text: root.answer
-    ToggleButton:
-        text:"Bruxelles"
-        on_press: root.verify_answer(self.text)
-        group: "answer"
-    ToggleButton:
-        text:"Rome"
-        on_press: root.verify_answer(self.text)
-        group: "answer"
-    ToggleButton:
-        text:"Barcelone"
-        on_press: root.verify_answer(self.text)
-        group: "answer"
-    ToggleButton:
-        text:"Paris"
-        on_press: root.verify_answer(self.text)
-        group: "answer"
-
-<MyScreenManager@NavigationScreenManager>:
+<MyScreenManager>:
     Screen:
         text: "MenuPrincipal"
         MenuPrincipal:
     Screen:
         name: "Question1"
         Question1:
+    Screen:
+        name: "Question2"
+        Question2:
+    Screen:
+        name: "Question3"
+        Question3:
+    Screen:
+        name: "Question4"
+        Question4:
+    #Screen:
+     #   name: "FinalScreen"
+      #  FinalScreen:
+    Screen:
+        name: "Resultats"
+        Resultats:
+
+##############################################################################################
+# Définition des différents écrans du jeu
+##############################################################################################
+
+<MenuPrincipal@FloatLayout>:
+    orientation: "vertical"
+    Label:
+        text: " Cette application est l'adaptation graphique du petit projet questionnaire "
+        size_hint: 1,1                              
+    Button:
+        text: ""
+        on_press: app.manager.push("Question1")
+        #size: "100dp","60dp"
+        background_normal: 'images/Commencer-Button3.png'
+        size_hint: .3,.2
+        pos_hint: {"x":0.36, "center_y":0.3}       #"bottom":0.5
+        color: 0, 0, 1, 1 
+    
+<Question1>:
+    orientation: "vertical"
+    Label:
+        text: root.answer
+    RoundedButton:
+        text:"Reims"
+        on_press: app.manager.push("Question2")
+        on_press: app.list.append("Reims")
+        group: "answer"
+    RoundedButton2:
+        text:"Marseille"
+        on_press: app.manager.push("Question2")
+        on_press: app.list.append("Marseille")
+        group: "answer"
+    RoundedButton:
+        text:"Toulouse"
+        on_press: app.manager.push("Question2")
+        on_press: app.list.append("Toulouse")
+        group: "answer"
+    RoundedButton2:
+        text:"Paris"
+        on_press: app.manager.push("Question2")   
+        on_press: app.list.append("Paris")
+        on_press: app.number += 1
+        group: "answer"
+
+<Question2>:
+    orientation: "vertical"
+    Label:
+        text: root.answer
+    RoundedButton2:
+        text:"Pise"
+        on_press: app.manager.push("Question3")
+        on_press: app.list.append("Pise")
+        group: "answer"
+    RoundedButton:
+        text:"Rome"
+        on_press: app.manager.push("Question3")
+        on_press: app.list.append("Rome")
+        on_press: app.number += 1
+        group: "answer"
+    RoundedButton2:
+        text:"Venise"
+        on_press: app.manager.push("Question3")
+        on_press: app.list.append("Venise")
+        group: "answer"
+    RoundedButton:
+        text:"Florence"
+        on_press: app.manager.push("Question3")
+        on_press: app.list.append("Florence")
+        group: "answer"
+
+<Question3>:
+    orientation: "vertical"
+    Label:
+        text: root.answer
+    RoundedButton:
+        text:"Anvers"
+        on_press: app.manager.push("Question4")
+        on_press: app.list.append("Anvers")
+        group: "answer"
+    RoundedButton2:
+        text:"Andenne"
+        on_press: app.manager.push("Question4")
+        on_press: app.list.append("Andenne")
+        group: "answer"
+    RoundedButton:
+        text:"Bruxelles"
+        on_press: app.manager.push("Question4")
+        on_press: app.list.append("Bruxelles")
+        on_press: app.number += 1
+        group: "answer"
+    RoundedButton2:
+        text:"Louvain"
+        on_press: app.manager.push("Question4")
+        on_press: app.list.append("Louvain")
+        group: "answer"
+
+<Question4>:
+    orientation: "vertical"
+    Label:
+        text: root.answer
+    RoundedButton2:
+        text:"Lagos"
+        on_press: app.manager.push("Resultats")
+        on_press: app.list.append("Lagos")
+        group: "answer"
+    RoundedButton:
+        text:"Porto"
+        on_press: app.manager.push("Resultats")
+        on_press: app.list.append("Porto")
+        group: "answer"
+    RoundedButton2:
+        text:"Lisbonne"
+        on_press: app.manager.push("Resultats")
+        on_press: app.list.append("Lisbonne")
+        on_press: app.number += 1
+        group: "answer"
+    RoundedButton:
+        text:"Madrid"
+        on_press: app.manager.push("Resultats")
+        on_press: app.list.append("Madrid")
+        group: "answer"
+
+#<FinalScreen@BoxLayout>:
+#   orientation: "vertical"
+#   RoundedButton:
+#       text: "Voir mes resultats"
+#       on_press: app.manager.push("Resultats")
+    
+            
+<Resultats@BoxLayout>:
+    orientation: "vertical"
+    Label:
+        text: "[color=3333ff]Votre score [/color]: " + str(app.number) + "/4"
+        markup: True
+    Label:
+        text: "Vos reponses : " + ', '.join(app.list)
+    Label: 
+        text: "Question 1 : " + "La bonne reponse etait  " + "[color=33ff33]Paris[/color]"
+        markup: True
+    Label: 
+        text: "Question 2 : " + "La bonne reponse etait  " + "[color=33ff33]Rome[/color]"
+        markup: True
+    Label: 
+        text: "Question 3 : " + "La bonne reponse etait  " + "[color=33ff33]Bruxelles[/color]"
+        markup: True
+    Label: 
+        text: "Question 4 : " + "La bonne reponse etait  " + "[color=33ff33]Lisbonne[/color]"
+        markup: True
+    Label:
+        text: "Appreciation : " + "[color=ffff33]Excellent travail ! [/color] " if app.number == 4 else  " Appreciation : "+ "[color=ff3333]Peut mieux faire ! [/color]"
+        markup: True
+    
+
+##############################################################################################
+# Définiton des widgets utilisés par les écrans
+##############################################################################################
+<RoundedButton@Button>
+    background_color: (0,0,0,0)
+    #background_normal: ''
+    canvas.before:
+        Color:
+            rgba: (48/255,84/255,150/255,1)
+            on_press: rgba: (1,0,0,1)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [32]
+<RoundedButton2@Button>
+    background_color: (0,0,0,0)
+    #background_normal: ''
+    canvas.before:
+        Color:
+            rgba: (0/255,170/255,255/255,1)
+            on_press: rgba: (1,0,0,1)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [32]
+<MDRectangleFlatButton>
+    text: "MDRectangleFlatButton"
+    theme_text_color: "Custom"
+    text_color: "black"
+    line_color: "red"
