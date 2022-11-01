@@ -23,7 +23,7 @@ MyScreenManager:
                     x: 10
                     y: 10
                     icon: "account"
-    Screen:
+    MDScreen:
         name: "Explaination"
         Explaination:
         Widget:
@@ -37,14 +37,21 @@ MyScreenManager:
                 icon: "keyboard-backspace"
                 on_press: app.manager.pop()
 
-                
-
+   #MDScreen:
+   #    name: "mdscreen"
+        MDBoxLayout:
+            id: box
+            adaptive_size: True
+            spacing: "56dp"
+            pos_hint: {"center_x": .5, "center_y": .5}
+            width: root.width
+            height: root.height
 #############################################################################################
 # Définition des différents écrans
 #############################################################################################
 
 <Explaination@Screen>
-    #BoxLayout:
+    #RelativeLayout:
     Label:
         #disabled: True
         #background_disabled_normal: self.background_normal
@@ -62,7 +69,9 @@ MyScreenManager:
             Line:    # --- adds a border --- #
                 width: 2
                 rectangle: self.x+6, self.y+6, self.width-11, self.height-11  # +6 +6 - 11 - 11
-                    
+       
+        
+
 <MainGame@Screen>
    
     MDBoxLayout:
@@ -165,3 +174,22 @@ MyScreenManager:
             size: self.size
             pos: self.pos
             radius: [58]
+
+<MD3Card>
+    padding: 4
+    size_hint: None, None
+    size: "200dp", "100dp"
+
+    MDRelativeLayout:
+
+        MDIconButton:
+            icon: "dots-vertical"
+            pos_hint: {"top": 1, "right": 1}
+
+        MDLabel:
+            id: label
+            text: root.text
+            adaptive_size: True
+            color: "grey"
+            pos: "12dp", "12dp"
+            bold: True

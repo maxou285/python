@@ -17,6 +17,9 @@ personne["poste"] = "Developpeur"                           # Rajoute une clé "
 print(personne)
 
 
+personne["amis"] = "Jean"                                   # Rajoute une clé amis avec comme contenu : "Jean " dans le dictionnaire personne
+print(personne)
+
 achat = ("chocolat","beurre","fromage")                     
 personne["achat"] = achat                                    # Rajoute une clé "achat" avec comme contenu : le contenu du tuple achat déclaré plus haut
 print(personne)                                              # dans le dictionnaire personne

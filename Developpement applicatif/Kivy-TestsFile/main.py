@@ -1,40 +1,66 @@
 from kivy.lang import Builder
+from kivy.properties import StringProperty
 
 from kivymd.app import MDApp
+from kivymd.uix.card import MDCard
 
-"""KV = '''
+KV = '''
+<MD3Card>
+    padding: 4
+    size_hint: None, None
+    size: "200dp", "100dp"
 
-MDRectangleFlatButton:
-    text: "MDRectangleFlatButton"
-    theme_text_color: "Custom"
-    text_color: "black"
-    line_color: "red"
-'''"""
+    MDRelativeLayout:
+
+        MDIconButton:
+            icon: "dots-vertical"
+            pos_hint: {"top": 1, "right": 1}
+
+        MDLabel:
+            id: label
+            text: root.text
+            adaptive_size: True
+            color: "grey"
+            pos: "12dp", "12dp"
+            bold: True
+
+
+MDScreen:
+
+    MDBoxLayout:
+        id: box
+        adaptive_size: True
+        spacing: "56dp"
+        pos_hint: {"center_x": .5, "center_y": .5}
+'''
+
+
+class MD3Card(MDCard):
+    '''Implements a material design v3 card.'''
+
+    text = StringProperty()
 
 
 class Example(MDApp):
-    """def build(self):
-        #self.theme_cls.theme_style = "Dark"
-        #self.theme_cls.primary_palette = "Orange"
-        #self.theme_cls.material_style = "M3"
-        return Builder.load_string(KV)"""
+    def build(self):
+        self.theme_cls.material_style = "M3"
+        return Builder.load_string(KV)
 
-    '''def on_start(self):
-        data = {
-            "standard": {"md_bg_color": "#fefbff", "text_color": "#6851a5"},
-            "small": {"md_bg_color": "#e9dff7", "text_color": "#211c29"},
-            "large": {"md_bg_color": "#f8d7e3", "text_color": "#311021"},
+    def on_start(self):
+        styles = {
+            "outlined": "#f8f5f4"
         }
-        for type_button in data.keys():
+        for style in styles.keys():
             self.root.ids.box.add_widget(
-                MDFloatingActionButton(
-                    icon="pencil",
-                    type=type_button,
-                    theme_icon_color="Custom",
-                    md_bg_color=data[type_button]["md_bg_color"],
-                    icon_color=data[type_button]["text_color"],
+                MD3Card(
+                    line_color=(0.2, 0.2, 0.2, 0.8),
+                    style=style,
+                    text=style.capitalize(),
+                    md_bg_color=styles[style],
+                    shadow_softness=2 if style == "elevated" else 12,
+                    shadow_offset=(0, 1) if style == "elevated" else (0, 2),
                 )
-            )'''
+            )
 
 
 Example().run()

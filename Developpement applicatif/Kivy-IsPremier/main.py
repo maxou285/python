@@ -64,7 +64,24 @@ class IsPremierApp(MDApp):
                     self.text_input = "Premier"
         except:
             self.text_input = "Rentrez un nombre correct"
-
+    
+    def on_start(self):
+        styles = {
+            "outlined": "#f8f5f4"
+        }
+        for style in styles.keys():
+            self.root.ids.box.add_widget(
+                MD3Card(
+                    line_color=(0.2, 0.2, 0.2, 0.8),
+                    style=style,
+                    text= "[color=ff3333][b]Hello readers[/b][/color]\nTo explain briefly IsPremier is an application\n i created using the python module Kivy.\nBasically it allows users to enter a number and \nthen find out whether it is a prime number.\nWith Kivy i made the mechanical part of the app\nThe UI part was made using KivyMD it's a module \nrelated to Kivy but it isn't include in the kivy import so\nyou have to import kivymd separately\n\nTechnologies used : \n  Python3.10.0\n  Kivy\n  KivyMD\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+                    md_bg_color=styles[style],
+                    shadow_softness=2 if style == "elevated" else 12,
+                    shadow_offset=(0, 1) if style == "elevated" else (0, 2),
+                    size= (Window.size)   # self.root.ids.box.height
+                    
+                )
+            )
 
 #############################################################################################
 # Programme Principal
