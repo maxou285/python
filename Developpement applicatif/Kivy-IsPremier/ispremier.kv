@@ -23,7 +23,7 @@ MyScreenManager:
                     x: 10
                     y: 10
                     icon: "account"
-    MDScreen:
+    Screen:
         name: "Explaination"
         Explaination:
         Widget:
@@ -37,15 +37,7 @@ MyScreenManager:
                 icon: "keyboard-backspace"
                 on_press: app.manager.pop()
 
-   #MDScreen:
-   #    name: "mdscreen"
-        MDBoxLayout:
-            id: box
-            adaptive_size: True
-            spacing: "56dp"
-            pos_hint: {"center_x": .5, "center_y": .5}
-            width: root.width
-            height: root.height
+
 #############################################################################################
 # Définition des différents écrans
 #############################################################################################
@@ -175,21 +167,3 @@ MyScreenManager:
             pos: self.pos
             radius: [58]
 
-<MD3Card>
-    padding: 4
-    size_hint: None, None
-    size: "200dp", "100dp"
-
-    MDRelativeLayout:
-
-        MDIconButton:
-            icon: "dots-vertical"
-            pos_hint: {"top": 1, "right": 1}
-
-        MDLabel:
-            id: label
-            text: root.text
-            adaptive_size: True
-            color: "grey"
-            pos: "12dp", "12dp"
-            bold: True
