@@ -10,7 +10,7 @@ from _thread import *
 
 
 class ChatApp(App):
-    nick_name = "c"
+    nick_name = ""
     host_ip = ""
     host_port = ""
     message = StringProperty("Enter your message")
