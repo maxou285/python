@@ -1,0 +1,108 @@
+MainScreen:
+
+
+
+
+
+
+<MainScreen@BoxLayout>
+    orientation: "vertical"
+    MainBox:
+    MyMessageBox:
+
+<MainBox@BoxLayout>
+    size_hint: 1, .9
+    text: "MainBox"
+    BoxLayout:
+        orientation: "vertical"
+        size_hint: .25, 1
+        Label:        
+            text: "[font=fonts/Chunk Five Print.otf][b]Nickname[/b][/font]"
+            markup: True
+        MDTextField:
+            mode: "fill"
+            multiline: False
+            on_text_validate: app.on_nickname_validate(self)
+        Label:
+            text: "[font=fonts/Chunk Five Print.otf][b]Host Ip [/b][/font]"
+            markup: True
+        MDTextField:
+            mode: "fill"
+            multiline: False
+            on_text_validate: app.on_hostip_validate(self)
+        Label:
+            text: "[font=fonts/Chunk Five Print.otf][b]Host port[/b][/font]"
+            markup: True
+        MDTextField:
+            mode: "fill"
+            multiline: False
+            on_text_validate: app.on_hostport_validate(self)
+        MDRectangleFlatIconButton:
+            icon: "lan-connect"
+            text: "Connect"
+            theme_text_color: "Custom"
+            text_color: "white"
+            line_color: "white"
+            theme_icon_color: "Custom"
+            icon_color: "white"
+            size_hint: 1,.1
+            on_press: app.connect_pressed()
+        
+    ScrollView:
+        Label:
+            text_size: self.size
+            halign: "left"
+            text: app.label_messages
+
+<MyMessageBox@BoxLayout>
+    size_hint: 1, .1
+    Label:
+        size_hint: .25, 1
+        text: "Your message: "
+    MDTextField:
+        id: message_field
+        text: app.message
+        multiline: False
+        on_text_validate: app.send_message(self.text)
+        hint_text: "Enter your message"
+        markup: True
+    MDIconButton:
+        icon: "send-circle-outline"
+        on_press: app.send_message(message_field.text)
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ChatSettings@BoxLayout>
+    orientation: "vertical"
+    size_hint: .25, .9
+    pos_hint: {"top": 1}
+    TextInput:
+        text: "nickname"
+    TextInput:
+        text: "host_ip"
+    TextInput:
+        text: "host_port"
+    Button:
+        text: "Connect"
+    Button:
+        text: "Type message"
+        size_hint: 1, .1
+
+
+
