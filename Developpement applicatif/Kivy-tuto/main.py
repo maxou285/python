@@ -2,8 +2,6 @@
 from os.path import abspath
 
 
-
-
 from kivy.app import \
     App  # Structuer de bas de kivy 1 class App 1 class MainWidget ou layout et .run
 from kivy.metrics import dp

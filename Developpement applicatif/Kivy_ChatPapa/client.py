@@ -15,11 +15,13 @@ from kivymd.app import MDApp
 import random
 import kivy.core.text.markup
 from kivy.core.text.markup import MarkupLabel
-from kivy.uix.label import Label
+from kivy.uix.scrollview import ScrollView
+
 
 class ChatApp(MDApp):
     def build(self):
         self.theme_cls.theme_style = "Dark"
+        print(self.root.ids)
        
     nick_name = ""
     host_ip = ""
@@ -38,6 +40,7 @@ class ChatApp(MDApp):
                 break
             self.label_messages += "\n"+ data.decode('utf-8')
         connection_socket.close()
+
         
 
     def on_nickname_validate(self, widget):
@@ -93,6 +96,5 @@ class ChatApp(MDApp):
             print(str(e))
         self.message = ""
         
-
 
 ChatApp().run()

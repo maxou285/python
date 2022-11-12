@@ -9,8 +9,6 @@ import random
 # -------------------------
 HOST_IP = ''
 HOST_PORT_NUMBER = 2004
-COLORS = ["#808080","#C0C0C0","#00FFFF","#008080","#008000","#808000","#00FF00","#FF00FF","#FF0000","#F5DEB3",
-          "#A52A2A","#8A2BE2","#D2691E","#FF8C00","#00BFFF","#FFD700","#FFA500","#FFC0CB","#DDA0DD","#FA8072","#40E0D0"]
 
           
 # -------------------------------
@@ -45,6 +43,14 @@ def multi_threaded_client(connection_socket, color):
     # exit in case of break
     connection_socket.close()
 
+def color_choose():
+    color = str(hex(random.randint(0,255)))
+    color = color[2:]
+    if int(color,16) < 10:
+        color = "0" + color
+    return color
+
+
 # -------------------------------
 # -       INITITALISATION       -
 # -------------------------------
@@ -70,7 +76,12 @@ while True:
     client_connection_socket, client_address = ServerSideSocket.accept()            # wait until a Client connects and capture the data
     clients_sockets_list.append(client_connection_socket)
     print('Connected to: ' + client_address[0] + ':' + str(client_address[1]))      # address[0]=IP address[1]=port
-    color = COLORS[random.randint(0,len(COLORS)-1)]
+    #color = COLORS[random.randint(0,len(COLORS)-1)]
+    red = color_choose()
+    green = color_choose()
+    blue = color_choose()
+    color = "#" + red + green + blue
+    print(color)
     start_new_thread(multi_threaded_client, (client_connection_socket, color ))           # create a dedicated thread for the client
 
 ServerSideSocket.close()
