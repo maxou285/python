@@ -57,13 +57,28 @@ MainScreen:
             icon_color: "white"
             size_hint: 1,.1
             on_press: app.disconnect_pressed()
-        
+   
+
     ScrollView:
+        do_scroll_y: True
+        scroll_y: 0
         Label:
-            text_size: self.size
             halign: "left"
+            text_size: self.width, None
+            #text: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"+app.label_messages
             text: app.label_messages
             markup: True
+            size_hint_y: None
+            height: self.texture_size[1]
+            id: mybutton
+            
+                
+
+                
+
+
+            
+
 
 <MyMessageBox@BoxLayout>
     size_hint: 1, .1
