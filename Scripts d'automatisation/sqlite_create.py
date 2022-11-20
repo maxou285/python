@@ -7,7 +7,7 @@ import sqlite3
 # commit
 # fermer
 
-connexion = sqlite3.connect("albums2.db")
+connexion = sqlite3.connect("albums3.db")
 curseur = connexion.cursor()
 
 curseur.execute("CREATE TABLE artiste (artiste_id INTEGER NOT NULL PRIMARY KEY, nom VARCHAR);")
