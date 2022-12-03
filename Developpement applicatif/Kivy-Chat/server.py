@@ -16,7 +16,9 @@ HOST_PORT_NUMBER = 2004
 # -------------------------------
 
 clients_sockets_list = []                                                           # This list will contain all the sockets of each connected client
-
+#clients_nicknames_list = []
+client_list_dict = {"ids": [] , "type": "client_ref"}
+message_dict = {"ids":[], "msg": ""}
 # -------------------------
 # -       FUNCTIONS       -
 # -------------------------
@@ -26,22 +28,49 @@ clients_sockets_list = []                                                       
 # A thread is creating each time a Client connects
 def multi_threaded_client(connection_socket, color):
     connection_socket.send(str.encode("[color=#00ff00][b]INFO[/b]: You're connected with the server[/color]"))          # Welcome message when the client connects
+    data_on_connect = connection_socket.recv(2048)
+    user_id = pickle.loads(data_on_connect)
+    message_dict["ids"].append("[color=" + color + "]"+user_id["id"]+"[/color]")
+    message_dict["msg"] = "[color=#ff7f00]"+ user_id["id"]+ " vient de se connecter au serveur[/color]"
+    send_to_all(message_dict)                                                                        # Welcome message
     while True:
-        data = connection_socket.recv(2048)                                         # wait until data are received
-        response = pickle.loads(data)                                               # serialize data on arrival
-        if not data:
-            break 
-        i = 0
-        while i < len(clients_sockets_list):
-            try:
-                clients_sockets_list[i].sendall(str.encode(" - [color=" + color + "]" + response["id"] + "[/color]: " + response["msg"]))                      # resend the data received to the sender
-            except socket.error as e:
-                print("Could not send a message to socket: " + str(clients_sockets_list[i]))
-                del clients_sockets_list[i]
-                continue               # force new loop without executing the rest of the code
-            i +=1 
+        data = connection_socket.recv(2048)
+        print("DATA : " + str(data))
+        if str(data) == "b''":
+            print("DISCON")
+            message_dict["msg"] = "[color=#ff7f00]"+ user_id["id"]+ " vient de se déconnecter du serveur[/color]"
+            index = clients_sockets_list.index(connection_socket)
+            del clients_sockets_list[index]
+            del message_dict["ids"][index]
+            print("après : " + str(message_dict["ids"]))
+            send_to_all(message_dict)                                                                # Disconecting
+            break
+        response = pickle.loads(data)
+        print(response)
+        if response["type"] == "Disconecting":
+            message_dict["msg"] = "[color=#ff7f00]"+ user_id["id"]+ " vient de se déconnecter du serveur[/color]"
+            index = clients_sockets_list.index(connection_socket)
+            del clients_sockets_list[index]
+            del message_dict["ids"][index]
+            print("après : " + str(message_dict["ids"]))
+            send_to_all(message_dict)                                                                # Disconecting
+            break
+        message_dict["msg"] = " - [color=" + color + "]" + response["id"] + "[/color]: " + response["msg"]
+        send_to_all(message_dict)                                                                     # Send message
     # exit in case of break
     connection_socket.close()
+
+def send_to_all(dict):
+    i = 0
+    while i < len(clients_sockets_list):
+        try:
+            clients_sockets_list[i].sendall(pickle.dumps(dict))
+            print(message_dict)
+        except socket.error as e:
+            print("Could not send a message to socket: " + str(clients_sockets_list[i]))
+            del clients_sockets_list[i]
+            continue               # force new loop without executing the rest of the code
+        i +=1 
 
 def color_choose():
     color = str(hex(random.randint(0,255)))

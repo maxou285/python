@@ -16,27 +16,55 @@ MainScreen:
     BoxLayout:
         orientation: "vertical"
         size_hint: .25, 1
-        Label:        
-            text: "[font=fonts/Chunk Five Print.otf][b]Nickname[/b][/font]"
-            markup: True
-        MDTextField:
-            mode: "fill"
-            multiline: False
-            on_text_validate: app.on_nickname_validate(self)
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: .3
+            Label:        
+                text: "[font=fonts/Chunk Five Print.otf][b]Nickname[/b][/font]"
+                markup: True
+            MDTextField:
+                mode: "fill"
+                multiline: False
+                on_text_validate: app.on_nickname_validate(self)
+        #Label:
+        #    text: "[font=fonts/Chunk Five Print.otf][b]Host Ip[/b][/font]"
+        #    markup: True
+        #MDTextField:
+        #    mode: "fill"
+        #    multiline: False
+        #    on_text_validate: app.on_hostip_validate(self)
+        #Label:
+        #    text: "[font=fonts/Chunk Five Print.otf][b]Host port[/b][/font]"
+        #    markup: True
+        #MDTextField:
+        #    mode: "fill"
+        #    multiline: False
+        #    on_text_validate: app.on_hostport_validate(self)
         Label:
-            text: "[font=fonts/Chunk Five Print.otf][b]Host Ip[/b][/font]"
+            text: "[font=fonts/Chunk Five Print.otf][b]Sound[/b][/font]"
+            size_hint_y: .1
             markup: True
-        MDTextField:
-            mode: "fill"
-            multiline: False
-            on_text_validate: app.on_hostip_validate(self)
+        Switch:
+            text: "Liste des connectés"
+            size_hint_y: .1
+            on_active: app.switch_on(self)
+            active: True
         Label:
-            text: "[font=fonts/Chunk Five Print.otf][b]Host port[/b][/font]"
+            text: "[font=fonts/Chunk Five Print.otf][b]Connected users[/b][/font]"
+            size_hint_y: .1
             markup: True
-        MDTextField:
-            mode: "fill"
-            multiline: False
-            on_text_validate: app.on_hostport_validate(self)
+        ScrollView:
+            #do_scroll_y: True
+            #scroll_y: 0
+            Label:
+                halign: "left"
+                text_size: self.width, None
+                #text: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"+app.label_messages
+                text: app.users_ids
+                markup: True
+                size_hint_y: None
+                height: self.texture_size[1]
+                id: mybutton
         MDRectangleFlatIconButton:
             icon: "lan-connect"
             text: "Connect"
@@ -71,6 +99,7 @@ MainScreen:
             size_hint_y: None
             height: self.texture_size[1]
             id: mybutton
+            spacing: "150dp"
             
                 
 
