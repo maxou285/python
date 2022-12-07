@@ -8,12 +8,14 @@ MainScreen:
 <MainScreen@BoxLayout>
     orientation: "vertical"
     MainBox:
+        id: "1"
     MyMessageBox:
 
 <MainBox@BoxLayout>
     size_hint: 1, .9
     text: "MainBox"
     BoxLayout:
+        id: "2"
         orientation: "vertical"
         size_hint: .25, 1
         BoxLayout:
@@ -22,10 +24,13 @@ MainScreen:
             Label:        
                 text: "[font=fonts/Chunk Five Print.otf][b]Nickname[/b][/font]"
                 markup: True
-            MDTextField:
+            #MDTextField:
+            My_MDTextField:
+                id: "3"
                 mode: "fill"
                 multiline: False
-                on_text_validate: app.on_nickname_validate(self)
+                #on_text_validate: app.on_nickname_validate(self)
+                #text: app.nick_name
         #Label:
         #    text: "[font=fonts/Chunk Five Print.otf][b]Host Ip[/b][/font]"
         #    markup: True
@@ -119,12 +124,17 @@ MainScreen:
         text: app.message
         multiline: False
         on_text_validate: app.send_message(self.text)
+        #on_text_validate: app.focused(self)
+        text_validate_unfocus: False
+        #on_press: self.focus = True
+        #focus: True
         hint_text: "Enter your message"
         markup: True
 
     MDIconButton:
         icon: "send-circle-outline"
         on_press: app.send_message(message_field.text)
+
 
     
 

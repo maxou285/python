@@ -7,8 +7,8 @@ import random
 # -------------------------
 # -       CONSTANTES      -
 # -------------------------
-HOST_IP = ''
-HOST_PORT_NUMBER = 2004
+HOST_IP = '192.168.0.250'
+HOST_PORT_NUMBER = 34315
 
           
 # -------------------------------

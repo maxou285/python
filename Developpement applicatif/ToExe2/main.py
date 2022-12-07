@@ -305,6 +305,6 @@ class PasswordApp(MDApp):
             elif randomcara == 3:
                 self.generate_text += str(CARACTERES_SPECIAUX[random.randint(0,len(CARACTERES_SPECIAUX)-1)])
 
-        
+
 Window.size = (800,600)
 PasswordApp().run()
