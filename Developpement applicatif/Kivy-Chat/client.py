@@ -19,16 +19,28 @@ from kivy.properties import BooleanProperty, StringProperty
 from kivy.uix.button import Button
 from kivy.uix.scrollview import ScrollView
 from kivymd.app import MDApp
+from kivy.uix.textinput import TextInput
+from kivymd.uix.textfield.textfield import MDTextField
+
+# Créer notre propre classe MDTexteField qui hérite de MDTextField
+class My_MDTextField(MDTextField):
+    def _init_(self, **kwargs):
+        super(My_MDTextField, self)._init_(**kwargs)
+
+    # On modifie la fonction on_text de la classe originale(MDTextField)
+    def on_text(self, instance, text):
+        print(text)
+        ChatApp.nick_name = text
 
 dingfile = os.path.join("ding.wav")
 class ChatApp(MDApp):
     def build(self):
         self.theme_cls.theme_style = "Dark"
         print(self.root.ids)
-       
+    
     nick_name = ""
-    host_ip = "127.0.0.1"
-    host_port = "2004"
+    host_ip = "oyagen.freeboxos.fr"
+    host_port = "34315"
     message = StringProperty("")
     label_messages = StringProperty("")
     ClientMultiSocket = socket.socket()
@@ -53,22 +65,19 @@ class ChatApp(MDApp):
             for client in data_decode["ids"]:
                 self.users_ids += "\n"+"[b] - "+client+"[/b]"
 
-    def on_nickname_validate(self, widget):
-        self.nick_name = widget.text
-        print(self.nick_name)
+    def focused(self, widget):
+        print("focus")
+        time.sleep(2)
+        Clock.schedule_once(lambda x: widget.focus == True, 2)
+        widget.focus = True
+        widget.text = "Hey"
 
     def switch_on(self, widget):
         print("Switched on ")
         self.slider_on = str(widget.active)
         print(widget.active)
 
-    def on_hostip_validate(self, widget):
-        self.host_ip = widget.text
-        print(self.host_ip)
-
-    def on_hostport_validate(self, widget):
-        self.host_port = widget.text
-        print(self.host_port)
+    
 
     def disconnect_pressed(self):
         print("Disconnecting..........")
@@ -78,7 +87,7 @@ class ChatApp(MDApp):
             print("send")
         except:
             print("echec")
-        time.sleep(2)
+        #time.sleep(2)
         self.ClientMultiSocket.close()
         self.label_messages += "[color=#00ff00]\n[b]INFO[/b]: You succesfully disconnected[/color]"
 
@@ -100,7 +109,7 @@ class ChatApp(MDApp):
             res = self.ClientMultiSocket.recv(1024)
             dict = {"id": self.nick_name, "type": "message"}
             self.ClientMultiSocket.sendall(pickle.dumps(dict))
-            self.label_messages += "\n " + res.decode('utf-8')
+            self.label_messages += "\n" + res.decode('utf-8')
             # Create a listening thread that will listen for data from the server
             # for all the other messages coming from the server
             start_new_thread(self.display_response_client_thread, (self.ClientMultiSocket, ))
