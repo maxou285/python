@@ -1,4 +1,0 @@
-([('client',
-   '/Users/maximedurand/Documents/Programmation/python/Developpement '
-   'applicatif/ToExe/dist/client',
-   'EXECUTABLE')],)

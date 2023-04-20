@@ -3,11 +3,13 @@ import os
 import pickle
 from _thread import *
 import random
+import time
 
 # -------------------------
 # -       CONSTANTES      -
 # -------------------------
-HOST_IP = '192.168.0.250'
+#HOST_IP = '192.168.0.250'
+HOST_IP = ''
 HOST_PORT_NUMBER = 34315
 
           
@@ -23,6 +25,17 @@ message_dict = {"ids":[], "msg": ""}
 # -       FUNCTIONS       -
 # -------------------------
 
+
+# GET HOURS
+
+#strings = time.strftime("%Y,%m,%d,%H,%M,%S")       # Avoir l'année le mois le jour l'heure les minutes et les secondes
+
+
+
+# FIN GET HOURS
+
+
+
 # The following function handles the reception and sending with a socket connection
 # In reality, it's a program that will be executed for each thread 
 # A thread is creating each time a Client connects
@@ -31,7 +44,7 @@ def multi_threaded_client(connection_socket, color):
     data_on_connect = connection_socket.recv(2048)
     user_id = pickle.loads(data_on_connect)
     message_dict["ids"].append("[color=" + color + "]"+user_id["id"]+"[/color]")
-    message_dict["msg"] = "[color=#ff7f00]"+ user_id["id"]+ " vient de se connecter au serveur[/color]"
+    message_dict["msg"] =  "[color=#ff7f00]"+ user_id["id"]+ " vient de se connecter au serveur[/color]"
     send_to_all(message_dict)                                                                        # Welcome message
     while True:
         data = connection_socket.recv(2048)
@@ -55,10 +68,21 @@ def multi_threaded_client(connection_socket, color):
             print("après : " + str(message_dict["ids"]))
             send_to_all(message_dict)                                                                # Disconecting
             break
-        message_dict["msg"] = " - [color=" + color + "]" + response["id"] + "[/color]: " + response["msg"]
+        message_dict["msg"] = get_hour()+ " - [color=" + color + "]" + response["id"] + "[/color]: " + response["msg"]
+        #message_dict["msg"] = "("+numbers_splited[0][1:] + ":" + str(numbers_splited[1][:-1])+")"+ " - [color=" + color + "]" + response["id"] + "[/color]: " + response["msg"]
         send_to_all(message_dict)                                                                     # Send message
     # exit in case of break
     connection_socket.close()
+
+def get_hour():
+    strings = time.strftime("%H,%M")                    # Avoir l'heure et les minutes
+    t = strings.split(',')
+    numbers = [ int(x) for x in t ]
+    n2 = str(numbers)
+    numbers_splited = n2.split(", ")
+    #print(f"\nDurée restante: {numbers_splited[0]:02d} : {numbers_splited[1]:02d} .", end="")
+    return f"({int(numbers_splited[0][1:]):02d}:{int(numbers_splited[1][:-1]):02d})"
+
 
 def send_to_all(dict):
     i = 0

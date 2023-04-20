@@ -22,7 +22,9 @@ MainScreen:
             orientation: 'vertical'
             size_hint_y: .3
             Label:        
-                text: "[font=fonts/Chunk Five Print.otf][b]Nickname[/b][/font]"
+                #text: "[font=ChunkFivePrint.otf][b]Nickname[/b][/font]"
+                text: "[b]Nickname[/b]"
+                font_name: "myfont"
                 markup: True
             #MDTextField:
             My_MDTextField:
@@ -46,7 +48,9 @@ MainScreen:
         #    multiline: False
         #    on_text_validate: app.on_hostport_validate(self)
         Label:
-            text: "[font=fonts/Chunk Five Print.otf][b]Sound[/b][/font]"
+            #text: "[font=ChunkFivePrint.otf][b]Sound[/b][/font]"
+            text: "[b]Sound[/b]"
+            font_name: "myfont"
             size_hint_y: .1
             markup: True
         Switch:
@@ -55,8 +59,10 @@ MainScreen:
             on_active: app.switch_on(self)
             active: True
         Label:
-            text: "[font=fonts/Chunk Five Print.otf][b]Connected users[/b][/font]"
+            #text: "[font=ChunkFivePrint.otf][b]Connected users[/b][/font]"
+            text: "[b]Connected users[/b]"
             size_hint_y: .1
+            font_name: "myfont"
             markup: True
         ScrollView:
             #do_scroll_y: True
