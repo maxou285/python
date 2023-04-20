@@ -1,0 +1,562 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap');
+html{
+  background-color: #9147FF;
+}
+body{
+
+  
+  background-color: #9147FF;
+  height: 100vh;
+
+}
+
+.toppage{
+  background-image: url("tg.png");
+  background-color: #9147FF;
+  background-size: 500px;
+  background-repeat: no-repeat;
+  background-position: center;
+  max-width: 100%;
+  height: 150px;
+  text-align: center;
+  size: 100%;
+  border: 0px;
+}
+
+
+.button {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  border: 4px solid black;
+  border-radius: 20px;
+  
+}
+
+p{
+  font-family: 'Rajdhani', sans-serif;
+}
+@keyframes cube {
+    from {
+        transform: scale(0) rotate(0deg) translate(-50%, -50%);
+        opacity: 1;
+    }
+    to {
+        transform: scale(20) rotate(960deg) translate(-50%, -50%);
+        opacity: 0;
+    }
+}
+
+.background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background: #9147ff;
+    overflow: hidden;
+}
+.background li {
+    position: absolute;
+    top: 80vh;
+    left: 45vw;
+    width: 10px;
+    height: 10px;
+    border: solid 1px #823fe5;
+    color: transparent;
+    transform-origin: top left;
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    animation: cube 7s ease-in forwards infinite;
+}
+undefined
+.background li:nth-child(0) {
+    animation-delay: 0s;
+    left: 43vw;
+    top: 4vh;
+    border-color: #9f4eff;
+}
+
+.background li:nth-child(1) {
+    animation-delay: 2s;
+    left: 96vw;
+    top: 11vh;
+    border-color: #9f4eff;
+}
+
+.background li:nth-child(2) {
+    animation-delay: 4s;
+    left: 18vw;
+    top: 92vh;
+}
+
+.background li:nth-child(3) {
+    animation-delay: 6s;
+    left: 21vw;
+    top: 37vh;
+}
+
+.background li:nth-child(4) {
+    animation-delay: 8s;
+    left: 67vw;
+    top: 42vh;
+    border-color: #9f4eff;
+}
+
+.background li:nth-child(5) {
+    animation-delay: 10s;
+    left: 23vw;
+    top: 47vh;
+}
+
+.background li:nth-child(6) {
+    animation-delay: 12s;
+    left: 65vw;
+    top: 50vh;
+    border-color: #9f4eff;
+}
+
+.background li:nth-child(7) {
+    animation-delay: 14s;
+    left: 47vw;
+    top: 40vh;
+    border-color: #9f4eff;
+}
+
+.background li:nth-child(8) {
+    animation-delay: 16s;
+    left: 11vw;
+    top: 16vh;
+}
+
+.background li:nth-child(9) {
+    animation-delay: 18s;
+    left: 46vw;
+    top: 9vh;
+}
+
+.background li:nth-child(10) {
+    animation-delay: 20s;
+    left: 10vw;
+    top: 25vh;
+    border-color: #9f4eff;
+}
+
+.background li:nth-child(11) {
+    animation-delay: 22s;
+    left: 14vw;
+    top: 55vh;
+}
+
+.background li:nth-child(12) {
+    animation-delay: 24s;
+    left: 32vw;
+    top: 69vh;
+}
+
+.background li:nth-child(13) {
+    animation-delay: 26s;
+    left: 61vw;
+    top: 28vh;
+    border-color: #9f4eff;
+}
+
+.background li:nth-child(14) {
+    animation-delay: 28s;
+    left: 60vw;
+    top: 65vh;
+    border-color: #9f4eff;
+}
+
+.background li:nth-child(15) {
+    animation-delay: 30s;
+    left: 89vw;
+    top: 90vh;
+}
+
+.background li:nth-child(16) {
+    animation-delay: 32s;
+    left: 81vw;
+    top: 85vh;
+    border-color: #9f4eff;
+}
+
+.background li:nth-child(17) {
+    animation-delay: 34s;
+    left: 37vw;
+    top: 71vh;
+}
+
+.background li:nth-child(18) {
+    animation-delay: 36s;
+    left: 1vw;
+    top: 78vh;
+    border-color: #9f4eff;
+}
+
+.background li:nth-child(19) {
+    animation-delay: 38s;
+    left: 94vw;
+    top: 82vh;
+}
+
+.background li:nth-child(20) {
+    animation-delay: 40s;
+    left: 56vw;
+    top: 58vh;
+}
+
+.background li:nth-child(21) {
+    animation-delay: 42s;
+    left: 35vw;
+    top: 21vh;
+}
+
+.background li:nth-child(22) {
+    animation-delay: 44s;
+    left: 25vw;
+    top: 32vh;
+    border-color: #9f4eff;
+}
+
+.background li:nth-child(23) {
+    animation-delay: 46s;
+    left: 72vw;
+    top: 23vh;
+}
+
+.background li:nth-child(24) {
+    animation-delay: 48s;
+    left: 78vw;
+    top: 75vh;
+    border-color: #9f4eff;
+}
+
+.background li:nth-child(25) {
+    animation-delay: 50s;
+    left: 97vw;
+    top: 2vh;
+    border-color: #9f4eff;
+}
+
+.background li:nth-child(26) {
+    animation-delay: 52s;
+    left: 8vw;
+    top: 46vh;
+}
+
+.background li:nth-child(27) {
+    animation-delay: 54s;
+    left: 76vw;
+    top: 74vh;
+}
+
+.background li:nth-child(28) {
+    animation-delay: 56s;
+    left: 83vw;
+    top: 18vh;
+    border-color: #9f4eff;
+}
+
+.background li:nth-child(29) {
+    animation-delay: 58s;
+    left: 87vw;
+    top: 87vh;
+}
+
+.background li:nth-child(30) {
+    animation-delay: 60s;
+    left: 69vw;
+    top: 61vh;
+}
+
+.background li:nth-child(31) {
+    animation-delay: 62s;
+    left: 52vw;
+    top: 55vh;
+    border-color: #9f4eff;
+}
+
+.background li:nth-child(32) {
+    animation-delay: 64s;
+    left: 53vw;
+    top: 99vh;
+    border-color: #9f4eff;
+}
+
+.background li:nth-child(33) {
+    animation-delay: 66s;
+    left: 2vw;
+    top: 34vh;
+}
+
+.background li:nth-child(34) {
+    animation-delay: 68s;
+    left: 39vw;
+    top: 5vh;
+}
+
+.background li:nth-child(35) {
+    animation-delay: 70s;
+    left: 30vw;
+    top: 94vh;
+    border-color: #9f4eff;
+}
+
+
+
+
+
+
+
+
+
+
+// {
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+   outline: none;
+}
+
+//body {
+   margin: 0;
+   padding: 30px 0;
+   font-family: 'Roboto', sans-serif;
+   background: #F1F2F6;
+}
+
+//h1 {
+   text-align: center;
+   font-weight: 300;
+   color: #777
+}
+
+//h1 span {
+   font-weight: 600;
+}
+
+.timeline-container {
+   width: 80%;
+   padding: 50px 0;
+   margin: 50px auto;
+   position: relative;
+   overflow: hidden;
+}
+.timeline-container:before { /*line down the middle*/
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 50%;
+   margin-left: -1px;
+   width: 2px;
+   height: 100%;
+   background: #CCD1D9;
+   z-index: 1
+}
+.timeline-block {
+   width: -webkit-calc(50% + 8px);
+   width: -moz-calc(50% + 8px);
+   width: calc(50% + 8px);
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: -moz-box;
+   display: flex;
+   -webkit-box-pack: justify;
+   -webkit-justify-content: space-between;
+   -moz-box-pack: justify;
+   justify-content: space-between;
+   clear: both;
+}
+.timeline-block-right {
+   float: right;
+}
+.timeline-block-left {
+   float: left;
+   direction: rtl
+}
+.marker {
+   width: 16px;
+   height: 16px;
+   border-radius: 50%;
+   border: 2px solid #F5F7FA;
+   background: #4DD0E1;
+   margin-top: 10px;
+   z-index: 9999
+}
+.timeline-content {
+   width: 95%;
+   padding: 0 15px;
+   color: #666
+}
+.timeline-content h3 {
+   margin-top: 5px;
+   margin-bottom: 5px;
+   font-size: 25px;
+   font-weight: 500
+}
+.timeline-content span {
+   font-size: 15px;
+   color: #a4a4a4;
+}
+.timeline-content p {
+   font-size: 14px;
+   line-height: 1.5em;
+   word-spacing: 1px;
+   color: #888;
+}
+@media screen and (max-width: 768px) {
+   .timeline-container:before {
+      left: 8px;
+      width: 2px;
+   }
+   .timeline-block {
+      width: 100%;
+      margin-bottom: 30px;
+   }
+   .timeline-block-right {
+      float: none;
+   }
+   .timeline-block-left {
+      float: none;
+      direction: ltr;
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*dropping water effect on page 3 */
+/* en fait l'effet est tellement insuportable que je l'ai désactivé mais on peut le
+réactiver en décommentant les classes dessous*/
+/*
+.drop {
+  position: relative;
+	width: 20px;
+	height: 20px;
+  left:0.5%;
+  top: -65%;
+  margin: 0 auto;
+	background: #FFF;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+  -moz-animation-name: drip;
+  -webkit-animation-name: drip;
+  animation-name: drip;
+  -moz-animation-timing-function: cubic-bezier(1,0,.91,.19);
+  -webkit-animation-timing-function: cubic-bezier(1,0,.91,.19);
+  animation-timing-function: cubic-bezier(1,0,.91,.19);
+  -moz-animation-duration: 2s;
+  -webkit-animation-duration: 2s;
+  animation-duration: 10s;
+  -moz-animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.drop:before {
+  content: "";
+  position: absolute;
+  width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 30px solid rgba(255,255,255,1);
+  top: -22px;
+}
+
+.wave {
+  position: relative;
+  opacity: 0;
+  top: 0;
+  left:38% ;
+	width: 2px;
+	height: 1px;
+  border: #FFF 7px solid;
+	-moz-border-radius: 300px / 150px;
+	-webkit-border-radius: 300px / 150px;
+	border-radius: 300px / 150px;
+  -moz-animation-name: ripple;
+  -webkit-animation-name: ripple;
+  animation-name: ripple;
+  -moz-animation-delay: 2s;
+  -webkit-animation-delay: 2s;
+  animation-delay: 10s;
+  -moz-animation-duration: 2s;
+  -webkit-animation-duration: 2s;
+  animation-duration: 10s;
+  -moz-animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.wave:after {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  top: -5px;
+  left: -5px;
+	width: 2px;
+	height: 1px;
+  border: #FFF 5px solid;
+	-moz-border-radius: 300px / 150px;
+	-webkit-border-radius: 300px / 150px;
+	border-radius: 300px / 150px;
+  -moz-animation-name: ripple-2;
+  -webkit-animation-name: ripple-2;
+  animation-name: ripple-2;
+  -moz-animation-duration: 2s;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -moz-animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+@keyframes ripple {
+    from {
+      opacity: 1;
+    }
+    to {
+      width: 600px;
+      height: 300px;
+      border-width: 1px;
+      top: -100px;
+      opacity: 0;
+    }
+}
+
+@keyframes ripple-2 {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  100% {
+    width: 200px;
+    height: 100px;
+    border-width: 1px;
+    top: 100px;
+    left: 200px;
+  }
+}
+
+@keyframes drip {
+    to {
+      top: 190px;
+    }
+}
+*/

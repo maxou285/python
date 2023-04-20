@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 
 # Lecture des données HTML
-f = open("recette.html", "r")
+f = open("site_recette/recette.html", "r")
 html_content = f.read()
 f.close()
  
