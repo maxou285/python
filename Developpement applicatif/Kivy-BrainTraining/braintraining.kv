@@ -1,0 +1,54 @@
+MainScreen:
+
+
+<MainScreen@RelativeLayout>
+    BoxLayout:
+        id: bl1
+    MDRaisedButton:
+        text: " Lancer "
+        size_hint: 0.2, 0.2
+        pos_hint: {'center_x': 0.5,'center_y': 0.3}
+        on_press: app.nbr_generator(1,int(root.ids.tinput.text))
+        on_press: root.ids.answer_field.text = ""
+        on_press: app.reponse = ""
+    
+    MDTextField:
+        id: tinput
+        hint_text: "Longueur du teste"
+        size_hint: 0.2, 0.2
+        pos_hint: {'center_x': 0.2,'center_y': 0.3}
+        text: app.text_input_text
+    
+    MDTextField: 
+        id: answer_field
+        hint_text: "Réponse"
+        size_hint: 0.2, 0.2
+        pos_hint: {'center_x': 0.8,'center_y': 0.3}
+        #on_text_validate: if self.text == app.reponse: print("Bonne réponse")
+        on_text_validate: if self.text == app.reponse: app.label_texte = "Bien joué"
+        on_text_validate: if self.text != app.reponse: app.label_texte = "Non..."
+
+    Label:
+        text: "Donnez les chiffres dans le sens inverse de leur apparition"
+        size_hint: 0.2, 0.2
+        pos_hint: {'center_x': 0.5 ,'center_y': 0.1}
+        
+
+<BoxLayout@BoxLayout>
+    #id: bl1
+    size_hint: 1, 0.5
+    pos_hint: {'center_y': .75}
+    Label:
+        id: l1
+        text: "[b]" + app.label_texte + "[/b]"
+        #font_name: "fonts/FFF_Tusj.ttf"
+        font_size: "80dp"
+        markup: True
+
+<MyGrid>
+    rows: 3
+    cols: 3
+
+
+<MainScreen2@RelativeLayout>
+    MyGrid:
