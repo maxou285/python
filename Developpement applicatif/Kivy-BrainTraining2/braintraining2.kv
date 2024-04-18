@@ -1,0 +1,66 @@
+#:import random random
+MyScreenManager:
+
+<MyScreenManager>
+    Screen:
+        MainScreen:
+    Screen: 
+        text: "MainMenu"
+        QuestionScreen:
+    Screen:
+        ReponseScreen:
+
+<MainScreen@BoxLayout>
+    QuestionScreen:
+    Button:
+        text: "VERS REPONSE SCREEN"
+
+<QuestionScreen>
+    rows: 3
+    cols: 3
+    Button: 
+        text: root.select_random_number()
+    Button: 
+        text: root.select_random_number()
+    Button: 
+        text: root.select_random_number()
+    Button: 
+        text: root.select_random_number()
+    Button: 
+        text: root.select_random_number()
+    Button: 
+        text: root.select_random_number()
+    Button: 
+        text: root.select_random_number()
+    Button: 
+        text: root.select_random_number()
+    Button: 
+        text: root.select_random_number()
+    #Button: 
+    #    text: str(random.randint(0,9))
+
+<ReponseScreen@GridLayout>
+    rows: 3
+    cols: 3
+    Button: 
+        text: ""
+    Button: 
+        text: ""
+    Button: 
+        text: ""
+    Button: 
+        text: ""
+    Button: 
+        text: ""
+    Button: 
+        text: ""
+    Button: 
+        text: ""
+    Button: 
+        text: ""
+    Button: 
+        text: ""
+    #Button: 
+    #    text: str(random.randint(0,9))
+
+    
