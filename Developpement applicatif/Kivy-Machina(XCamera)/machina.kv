@@ -1,0 +1,23 @@
+FloatLayout:
+    orientation: "vertical"
+
+    XCamera: 
+        id: xcamera
+        on_picture_taken: app.picture_taken(self)
+        canvas.before:
+            PushMatrix
+            Rotate:
+                angle: -90
+                origin: self.center
+        canvas.after:
+            PopMatrix
+
+
+    ToggleButton:
+        style: "elevated"
+        text: 'Play'
+        on_press: xcamera.play = not xcamera.play
+        size_hint_y: None
+        size_hint_x: .2
+        height: '48dp'
+
