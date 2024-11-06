@@ -80,5 +80,5 @@ personnes = ("Mélanie", "Jean", "Martin", "Alice", "Pierre", "Paul")
 # [start:stop:step]
 
 
-for i in personnes[0:2]:
+for i in personnes[0:5:2]:
     print(i)

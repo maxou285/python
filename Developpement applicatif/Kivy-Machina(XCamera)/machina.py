@@ -12,17 +12,31 @@ class Main(App):
     def build(self):
         return Builder.load_file("machina.kv")
     
+
+    ###### Fonction qui rotate l'image mais du coup on a des bordures noires ce qui fausse le numpyarray
+    #def picture_taken(self,instance):
+    #    print("Got the picture")
+    #    camera = instance.parent.ids.xcamera
+    #    timestr = time.strftime("%Y%m%d_%H%M%S")
+    #    image_name = "IMG_{}.png".format(timestr)
+    #    camera.export_to_png(image_name)
+    #    img = Image.open(image_name)
+    #    img = Image.open(timestr)
+    #    numpydata = asarray(img)
+    #    print(numpydata)
+
+
+    #### Fonction qui ne rotate pas l'image mais qui récupère le numpy array parfaitement
     def picture_taken(self,instance):
         print("Got the picture")
         camera = instance.parent.ids.xcamera
-        timestr = time.strftime("%Y%m%d_%H%M%S")
-        #timestr= time.strftime("%Y%-%m%-%d_%H%M%S")
-        image_name = "IMG_{}.png".format(timestr)
-        camera.export_to_png(image_name)
-        print("Captured")
-        img = Image.open(image_name)
+        timestr = time.strftime("%Y%" + "--" + "%m%"+"--"+"%d"+ " " + "%H.%M.%S.jpg") ## exact same pattern as normal os format
+        img = Image.open(timestr)
         numpydata = asarray(img)
         print(numpydata)
+        new_array = np.rot90(numpydata) ### pour rotate le numpy array de 90°
+        print("CHANGE")
+        print(new_array)
 
 
     def change_cam(self, instance):
